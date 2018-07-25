@@ -1,0 +1,104 @@
+.App {
+  text-align: center;
+
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+  
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.green{
+  background: linear-gradient(to bottom, #63da38 0%,#4fad2d 100%);
+}
+
+.orange{
+  background: linear-gradient(to bottom, #ff9500 0%,#ff8114 100%);
+}
+
+.red{
+  background: linear-gradient(to bottom, #ff3b30 0%,#d83129 100%);
+}
+
+.yellow{
+  background: linear-gradient(to bottom, #fffe00 0%,#ede900 100%);
+  color: black;
+}
+
+.pink{
+  background: linear-gradient(to bottom, #ff2968 0%,#e5275c 100%);
+}
+
+.purple{
+  background: linear-gradient(to bottom, #cc73e1 0%,#bd6cd1 100%);
+}
+
+.left-div{
+  width: 50%;
+  height: 65%;
+  float: left;
+  background-color: #222;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-div{
+  width: 49.5%;
+  float: right;
+  border:1px dashed #222;
+  padding-top: 2%;
+}
+
+.scope-button{
+  width: 13%;
+  background: none;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  color: #222;
+  font-size: 13px;
+}
+
+.filled{
+  outline: none;
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+  color:white;
+  background: rgb(167, 167, 167);
+  border-radius: 5px;
+}
+
+.scope-button:hover{
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+  color:white;
+  background: rgba(167, 167, 167, 0.5)
+}
