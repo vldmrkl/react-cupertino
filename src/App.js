@@ -3,7 +3,8 @@ import logo from './logo.png';
 import './App.css';
 import Switch from './components/Switch/Switch';
 import PushButton from './components/PushButton/PushButton';
-
+import Checkbox from './components/Checkbox/Checkbox';
+import cbIcon from './checkmark-orig.png';
 class App extends Component {
   render() {
     return (
@@ -31,18 +32,14 @@ class App extends Component {
             <PushButton title="Submit"
             color="pink"
             size="large"
-            style={{fontSize: "35px"}}  />
+            style={{fontSize: "35px"}}  /> <br /> <br />
 
-          {/* <button className="push-button">blue</button><br /><br />
-          <button className="push-button green">green</button><br /><br />
-          <button className="push-button yellow">yellow</button><br /><br />
-          <button className="push-button orange">orange</button><br /><br />
-          <button className="push-button red">red</button><br /><br />
-          <button className="push-button pink">pink</button><br /><br />
-          <button className="push-button purple">purple</button><br /><br /> */}
+            <Checkbox size="medium"
+            icon={cbIcon}/>
+
+
         </div>
         <div className="right-div">
-          {/* <Switch /> */}
 
         </div>
         <br />
