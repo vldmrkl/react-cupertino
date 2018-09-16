@@ -20,8 +20,19 @@ class Checkbox extends React.Component {
     componentDidMount() {
         if (this.props.size) {
             this.setState({
-                size: this.props.size,
-                color: GRADIENTS[this.props.colorUnchecked]
+                checked: this.props.checked
+            }, ()=>{
+                if(this.state.checked){
+                    this.setState({
+                        size: this.props.size,
+                        color: GRADIENTS[this.props.colorChecked]
+                    });
+                } else{
+                    this.setState({
+                        size: this.props.size,
+                        color: GRADIENTS[this.props.colorUnchecked]
+                    });
+                }
             });
             
         } 
