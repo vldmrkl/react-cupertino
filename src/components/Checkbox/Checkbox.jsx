@@ -23,7 +23,8 @@ class Checkbox extends React.Component {
                 size: this.props.size,
                 color: GRADIENTS[this.props.colorUnchecked]
             });
-        }
+            
+        } 
     }
 
     handleChange(e) {
@@ -60,9 +61,7 @@ class Checkbox extends React.Component {
                 style={{ background: this.state.color }}>
                                 
 
-                <input type="checkbox" className={"def-checkbox " + this.state.size + "-def-checkbox"}
-                    checked={this.state.checked}
-                    onChange={this.handleChange}></input>
+
                     <img className={"checkbox-icon "} src={this.props.icon} 
                      onClick={this.handleIconClick} alt="icon" />
             </span>
