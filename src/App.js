@@ -4,7 +4,8 @@ import './App.css';
 import Switch from './components/Switch/Switch';
 import PushButton from './components/PushButton/PushButton';
 import Checkbox from './components/Checkbox/Checkbox';
-import cbIcon from './checkmark-orig.png';
+import cbIcon from './cbIcon.svg';
+import cbIcon2 from './cbIcon2.svg';
 class App extends Component {
   render() {
     return (
@@ -37,6 +38,20 @@ class App extends Component {
             <Checkbox size="medium"
             icon={cbIcon}/>
 
+            <br />
+            
+            <Checkbox size="large"
+                      icon={cbIcon2}
+                      colorChecked="green"
+                      colorUnchecked="yellow"/>
+                      
+            <br />
+
+            <Checkbox size="small"
+                      icon={cbIcon}
+                      colorChecked="red"
+                      checked
+                      colorUnchecked="orange"/>
 
         </div>
         <div className="right-div">
