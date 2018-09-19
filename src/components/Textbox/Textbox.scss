@@ -1,0 +1,32 @@
+.cupertino-textbox:focus~.rs-float-label,
+.cupertino-textbox:not(:focus):valid~.rs-float-label {
+    top: 5%;
+    left: 5%;
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.tb-div {
+    position: relative;
+    width: 220px;
+    height: 45px;
+}
+
+.cupertino-textbox {
+    font-size: 12px;
+    padding-top: 3%;
+    width: 200px;
+    height: 35px;
+    outline: none;
+    border-radius: 6px;
+    border: none;
+}
+
+.rs-float-label {
+    position: absolute;
+    pointer-events: none;
+    left: 5%;
+    top: 20%;
+    opacity: 0.8;
+    transition: 0.25s ease all;
+}
