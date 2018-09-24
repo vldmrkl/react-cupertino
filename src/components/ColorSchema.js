@@ -15,7 +15,9 @@ export const COLORS = {
      darkRed: '#CC22518',
      white: '#FFFFFF',
      yellow: '#FFCC00',
-     darkYellow: '#D8AC21'
+     darkYellow: '#D8AC21',
+     white: '#ffffff',
+     black: '#000000'
 }   
    
 export const GRADIENTS = {   

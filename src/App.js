@@ -5,6 +5,8 @@ import Switch from './components/Switch/Switch';
 import PushButton from './components/PushButton/PushButton';
 import Checkbox from './components/Checkbox/Checkbox';
 import cbIcon from './checkmark-orig.png';
+import SnackBar from './components/SnackBar/Snackbar';
+
 class App extends Component {
   render() {
     return (
@@ -37,7 +39,10 @@ class App extends Component {
             <Checkbox size="medium"
             icon={cbIcon}/>
 
-
+            <br />
+            <SnackBar logoSrc={logo} />
+            <br />
+            
         </div>
         <div className="right-div">
 
