@@ -14,15 +14,20 @@
   font-size: 12px;
   padding-top: 3%;
   width: 200px;
-  height: 35px;
+  height: 30px;
   outline: none;
   border-radius: 6px;
-  border: none; }
+  border: 1px solid gray; }
+
+.cupertino-textbox:focus {
+  box-shadow: 0 0 5pt 1pt #2B7DE5;
+  border: 1px solid gray;
+  transition: box-shadow 0.2s ease-in-out; }
 
 .rs-float-label {
   position: absolute;
   pointer-events: none;
-  left: 5%;
+  left: 10%;
   top: 20%;
   opacity: 0.8;
   transition: 0.25s ease all; }

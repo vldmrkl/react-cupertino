@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
 import './App.css';
 import Switch from './components/Switch/Switch';
 import PushButton from './components/PushButton/PushButton';
@@ -9,12 +8,26 @@ import Textbox from './components/Textbox/Textbox';
 import cbIcon from './cbIcon.svg';
 import cbIcon2 from './cbIcon2.svg';
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      validPassword: false
+    };
+    this.checkPassword =this.checkPassword.bind(this);
+  }
+
+checkPassword() {
+  this.setState({
+    validPassword: !this.state.validPassword
+  });
+
+}
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Cupertino</h1>
+          <h1 className="App-title">Playground</h1>
         </header>
 
         <div className="left-div">
@@ -31,6 +44,7 @@ class App extends Component {
           <PushButton title="Submit"
             color="purple"
             size="small"
+            click={this.checkPassword}
           /><br /><br />
 
           <PushButton title="Submit"
@@ -60,7 +74,10 @@ class App extends Component {
             checked
             colorUnchecked="orange" />
           <br /><br />
-          <Textbox label="Name" />
+          <Textbox label="Login" />
+          <br /><br />
+          <Textbox label="Password" invalid={this.state.validPassword} />
+          <br /><br />
 
 
         </div>

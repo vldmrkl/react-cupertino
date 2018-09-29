@@ -56,7 +56,7 @@
 .right-div {
   width: 49.5%;
   float: right;
-  border: 1px dashed #222;
+  background-color: gainsboro;
   padding-top: 2%; }
 
 .scope-button {
