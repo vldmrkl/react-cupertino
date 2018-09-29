@@ -65,7 +65,8 @@ class PushButton extends React.Component {
                 onMouseLeave={this.setGradientBackground}
                 onMouseUp={this.setGradientBackground}
                 onMouseDown={this.setDarkSolidColorBackground}
-                onClick={this.props.click}>
+                onClick={this.props.click}
+            >
                 {this.props.title}
             </button>
         );
