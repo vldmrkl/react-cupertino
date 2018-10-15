@@ -46,10 +46,17 @@ class Textbox extends React.Component {
             extraStyle = {};
             extraStyleForLabel = {};
         }
-
+        
+        let type = "text";
+        if(this.props.password){
+            type = "password"
+        }
         return(
             <div className="tb-div">
-                <input type="text" className="cupertino-textbox" onFocus={this.handleFocus} onBlur={this.handleFocus} style={extraStyle} required />
+                <input type={type} className="cupertino-textbox" onFocus={this.handleFocus} 
+                                    onBlur={this.handleFocus} 
+                                    style={extraStyle} 
+                                    required />
                 <span className="rs-float-label" style={extraStyleForLabel}>{this.props.label}</span>
             </div>
         );
