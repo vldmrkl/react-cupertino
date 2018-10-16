@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Snackbar.css';
+import './SnackBar.css';
 import PropTypes from 'prop-types';
 import { COLORS, GRADIENTS } from '../ColorSchema';
 
