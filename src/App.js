@@ -4,7 +4,8 @@ import Switch from './components/Switch/Switch';
 import PushButton from './components/PushButton/PushButton';
 import Checkbox from './components/Checkbox/Checkbox';
 import Textbox from './components/Textbox/Textbox';
-
+import Slider from './components/Slider/Slider';
+import Snackbar from './components/SnackBar/Snackbar';
 import cbIcon from './cbIcon.svg';
 import cbIcon2 from './cbIcon2.svg';
 class App extends Component {
@@ -34,24 +35,29 @@ checkPassword() {
           <Switch /><br /><br />
           <Switch size="small"
             colorUnchecked="red"
-            colorChecked="blue" checked /> <br /><br />
+            colorChecked="blue" checked /> 
+            <br /><br />
           <Switch size="large"
-            colorChecked="orange" /><br /><br />
+            colorChecked="orange" />
+            <br /><br />
 
           <PushButton title="Submit"
-            color="orange" style={{ fontFamily: '"Comic Sans MS", cursive, sans-serif' }} /><br /><br />
+            color="orange" style={{ fontFamily: '"Comic Sans MS", cursive, sans-serif' }} />
+            <br /><br />
 
           <PushButton title="Submit"
             color="purple"
             size="small"
             click={this.checkPassword}
-          /><br /><br />
+          />
+          <br /><br />
 
           <PushButton title="Submit"
             color="pink"
             size="large"
             style={{ fontSize: "35px" }} /> <br /> <br />
 
+            <Snackbar />
 
 
         </div>
@@ -76,7 +82,11 @@ checkPassword() {
           <br /><br />
           <Textbox label="Login" />
           <br /><br />
-          <Textbox label="Password" invalid={this.state.validPassword} />
+          <Textbox label="Password" invalid={this.state.validPassword} password />
+          <br /><br />
+          <div className="slider-wrapper">
+          <Slider startValue={10} />
+          </div>
           <br /><br />
 
 
