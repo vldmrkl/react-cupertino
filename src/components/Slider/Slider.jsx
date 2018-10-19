@@ -39,8 +39,8 @@ class Slider extends React.Component {
 
         return(
             <input type="range" onChange={this.handleChange}
-            className={"cupertino-slider " + progressColor + " " + backgroundColor }
-            value={this.state.value} />
+                   className={"cupertino-slider " + progressColor + " " + backgroundColor }
+                   value={this.state.value} min={this.props.minValue} max={this.props.maxValue} />
         );
     }
 }
@@ -48,12 +48,16 @@ class Slider extends React.Component {
 Slider.defaultProps = {
     backgroundColor: 'grey',
     progressColor: 'blue',
+    minValue: 0,
+    maxValue: 100,
     startValue: 50
 };
 
 Slider.propTypes = {
     backgroundColor: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
     progressColor: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
+    minValue: PropTypes.number,
+    maxValue: PropTypes.number,
     startValue: PropTypes.number
 };
 
