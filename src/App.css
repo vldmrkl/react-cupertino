@@ -47,14 +47,7 @@
   height: 65%;
   float: left;
   background-color: #222;
-  /* background-image: url("https://images.unsplash.com/photo-1516655855035-d5215bcb5604"); */
-  background-size: 80%;
-  padding-top: 2%;
-
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center; 
-}
+  padding-top: 2%; }
 
 .right-div {
   width: 49.5%;
@@ -88,6 +81,5 @@
   color: white;
   background: rgba(167, 167, 167, 0.5); }
 
-  .slider-wrapper{
-    width: 30%;
-  }
+.slider-wrapper {
+  width: 30%; }

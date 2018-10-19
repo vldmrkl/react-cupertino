@@ -85,7 +85,7 @@ checkPassword() {
           <Textbox label="Password" invalid={this.state.validPassword} password />
           <br /><br />
           <div className="slider-wrapper">
-          <Slider startValue={10} />
+            <Slider startValue={10} />
           </div>
           <br /><br />
 
