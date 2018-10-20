@@ -6,13 +6,15 @@ import Checkbox from './components/Checkbox/Checkbox';
 import Textbox from './components/Textbox/Textbox';
 import Slider from './components/Slider/Slider';
 import Snackbar from './components/SnackBar/Snackbar';
+import Alert from './components/Alert/Alert';
 import cbIcon from './cbIcon.svg';
 import cbIcon2 from './cbIcon2.svg';
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      validPassword: false
+      validPassword: false,
+      isOpen: false
     };
     this.checkPassword =this.checkPassword.bind(this);
   }
@@ -24,13 +26,19 @@ checkPassword() {
 
 }
 
+toggleModal = () => {
+  this.setState({
+    isOpen: !this.state.isOpen
+  });
+}
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Playground</h1>
         </header>
-
+        
         <div className="left-div">
           <Switch /><br /><br />
           <Switch size="small"
@@ -55,8 +63,9 @@ checkPassword() {
           <PushButton title="Submit"
             color="pink"
             size="large"
-            style={{ fontSize: "35px" }} /> <br /> <br />
-
+            style={{ fontSize: "35px" }}
+            click={this.toggleModal} /> <br /> <br />
+            
             <Snackbar />
 
 
@@ -88,8 +97,12 @@ checkPassword() {
             <Slider startValue={10} />
           </div>
           <br /><br />
-
-
+          
+          <Alert show={this.state.isOpen}
+                 onClose={this.toggleModal}
+                 title="Modal example">
+          Here's some content for the modal
+         </Alert>
         </div>
         <br />
         <br /><br /><br /><br /><br /><br />
