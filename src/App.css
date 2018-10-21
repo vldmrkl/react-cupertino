@@ -47,6 +47,8 @@
   height: 65%;
   float: left;
   background-color: #222;
+  background-image: url("https://images.unsplash.com/photo-1540101336161-2699daa39bb4");
+  background-size: 60%;
   padding-top: 2%; }
 
 .right-div {
