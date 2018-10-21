@@ -8,71 +8,109 @@ class SnackBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            visible: props.visible,
-            style: {
-                background: GRADIENTS[props.backgroundColor],
-                color: COLORS[props.messageColor]
-            }
+            visible: props.visible
         };
+        this.handleClick = this.handleClick.bind(this);
         this.onClickDismiss = this.onClickDismiss.bind(this);
+    }
+
+    handleClick() {
+        return this.props.handleClick ? this.props.handleClick(this.onClickDismiss) : this.onClickDismiss();
     }
 
     onClickDismiss() {
         this.setState({ visible: false });
     }
 
+    generateMessage() {
+        let message = [];
+        let SnackbarHeight;
+        if (this.props.message > 35) {
+            let line1Complete = false;
+            message = this.props.message
+                .substring(0, 70)
+                .split(' ')
+                .reduce((arr, msg) => {
+                    if (arr[0].length < 35 && !line1Complete) {
+                        if (arr[0].length + msg.length > 35) {                      // when too big for 1 line
+                            arr.concat(msg);
+                            line1Complete = true;
+                        } else {
+                            arr[0] = arr[0].length ? arr[0] + ' ' + msg : msg;      // construct line 1
+                        }    
+                    } else {
+                        arr[1] = arr[1].length ? arr[1] + ' ' + msg : msg;      // construct line 2                        
+                    }
+                    return arr;
+                }, []);
+            SnackbarHeight = "68px";                
+        } else {
+            message = message.concat(this.props.message);
+            SnackbarHeight = "48px";
+        }
+
+        // wrap message lines in <p>
+        message = message.map((msg, index) => <p className="SnackBar-message-line" key={index}>{msg}</p>);
+
+        return {message, SnackbarHeight};
+    }
+
     render() {
+        const { message, SnackbarHeight } = this.generateMessage();
+
+        // const dismissButtonPaddingLeftRight = "8px";
+        // const dismissButtonPaddingTopBottom = "6px";
+
+
+        const style = {
+            display: this.state.visible ? "flex" : "none",
+            // display: this.state.visible ? "flex" : {animationName: "dismissSnackBar", animationDuration: "1s"},
+            background: GRADIENTS[this.props.backgroundColor],
+            height: SnackbarHeight,
+        };
+
+        // const messageStyle = {
+        //     color: this.props.messageColor,
+        // };
+
+        // const dissmissLabelStyle = {
+        //     color: this.props.dismissLabelColor,
+        // };
+
         return (
-            // <div className="SnackBar" style={this.state.style}>
-            <div className="SnackBar" style={this.state.visible ? {display: "flex"} : {display: "none"}}>
-            {/* <div className="SnackBar" style={this.state.visible ? {display: "flex"} : {animationName: "dismissSnackBar", animationDuration: "1s"}}> */}
-                <p className="SnackBar-message">
-                    {this.props.message}
-                </p>
-                <label className="SnackBar-button" onClick={this.onClickDismiss}>
+            <div className="SnackBar" style={style}>
+                <div className="SnackBar-message">
+                    {message}
+                </div>
+                <label className="SnackBar-button" onClick={this.handleClick}>
                     {this.props.dismissLabel}
                 </label> 
             </div> 
         );
     }
 
-    // componentDidMount() {
-    //     if (!this.state.visible) {
-    //         this.setState({
-    //             style: {
-    //                 display: "none"
-    //             }
-    //         });
-    //     }
-    // }
-
-    // shouldComponentUpdate() {
-    //     console.log(this.state.style.display);
-    //     console.log(this.state.style.display == "none");
-    //     if (this.state.style.display == "none") {
-    //         return false;   
-    //     }
-    // }
 }
 
 
 SnackBar.defaultProps = {
     dismissLabel: "DISMISS",
     visible: true,
-    size: "medium",
+    timeout: 5000,
     message: "NOTIFICATION!",
     backgroundColor: "grey",
-    messageColor: "white"
+    messageColor: "white",
+    dismissLabelColor: "red",
 };
 
 SnackBar.propTypes = {
     visible: PropTypes.bool,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    timeout: PropTypes.number,                              // TODO: add functionaility
     dismissLabel: PropTypes.string,
     message: PropTypes.string,
     backgroundColor: PropTypes.oneOf(Object.keys(GRADIENTS)),
     messageColor: PropTypes.oneOf(Object.keys(COLORS)),
-    dismissLabelColor: PropTypes.oneOf(Object.keys(COLORS))
+    dismissLabelColor: PropTypes.oneOf(Object.keys(COLORS)),
+    handleClick: PropTypes.func
 };
 
 export default SnackBar;

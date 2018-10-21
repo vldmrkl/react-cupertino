@@ -39,9 +39,10 @@ class App extends Component {
             <Checkbox size="medium"
             icon={cbIcon}/>
 
-            <br />
-            <SnackBar logoSrc={logo} />
-            <br />
+
+            <SnackBar message="But, not this one!" />            
+            <SnackBar message="Hello, my name is Snackbar! Is this a new line? Well, kind of." />
+
             
         </div>
         <div className="right-div">
