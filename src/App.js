@@ -7,6 +7,7 @@ import Textbox from './components/Textbox/Textbox';
 import Slider from './components/Slider/Slider';
 import Snackbar from './components/SnackBar/Snackbar';
 import Alert from './components/Alert/Alert';
+import AppBar from './components/AppBar/AppBar';
 import cbIcon from './cbIcon.svg';
 import cbIcon2 from './cbIcon2.svg';
 class App extends Component {
@@ -35,9 +36,7 @@ toggleModal = () => {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Playground</h1>
-        </header>
+        <AppBar />
         
         <div className="left-div">
           <Switch /><br /><br />
@@ -100,8 +99,8 @@ toggleModal = () => {
           
           <Alert show={this.state.isOpen}
                  onClose={this.toggleModal}
-                 title="Modal example">
-          Here's some content for the modal
+                 title="Success!">
+                 Picture was successfully saved.
          </Alert>
         </div>
         <br />
