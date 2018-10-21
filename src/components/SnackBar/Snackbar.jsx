@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './SnackBar.css';
+import './Snackbar.css';
 import PropTypes from 'prop-types';
 import { COLORS, GRADIENTS } from '../ColorSchema';
 
@@ -65,7 +65,7 @@ class SnackBar extends Component {
         const style = {
             display: this.state.visible ? "flex" : "none",
             // display: this.state.visible ? "flex" : {animationName: "dismissSnackBar", animationDuration: "1s"},
-            background: GRADIENTS[this.props.background],
+            // background: GRADIENTS[this.props.background],
             height: SnackbarHeight,
         };
 
