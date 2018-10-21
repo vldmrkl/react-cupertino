@@ -1,8 +1,8 @@
 export const COLORS = {   
      blue: '#1BADF8',
      darkBlue: '#2B7DE5',
-     grey: 'rgb(169, 169, 169)',   
-     darkGrey: '#6C6C6C',   
+     grey: 'rgb(169, 169, 169)',    //  seems to be dark grey   
+     darkGrey: '#6C6C6C',           //  seems to be light grey
      green: '#63DA38',
      darkGreen: '#00AB21',
      orange: '#FF9500',
@@ -15,7 +15,8 @@ export const COLORS = {
      darkRed: '#CC22518',
      white: '#FFFFFF',
      yellow: '#FFCC00',
-     darkYellow: '#D8AC21'
+     darkYellow: '#D8AC21',
+     black: '#000000'
 }   
    
 export const GRADIENTS = {   
