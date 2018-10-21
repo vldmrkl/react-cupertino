@@ -5,7 +5,7 @@ import PushButton from './components/PushButton/PushButton';
 import Checkbox from './components/Checkbox/Checkbox';
 import Textbox from './components/Textbox/Textbox';
 import Slider from './components/Slider/Slider';
-import Snackbar from './components/SnackBar/Snackbar';
+import SnackBar from './components/SnackBar/SnackBar';
 import Alert from './components/Alert/Alert';
 import cbIcon from './cbIcon.svg';
 import cbIcon2 from './cbIcon2.svg';
@@ -66,8 +66,6 @@ toggleModal = () => {
             style={{ fontSize: "35px" }}
             click={this.toggleModal} /> <br /> <br />
             
-            <Snackbar />
-
 
             <SnackBar message="But, not this one!" />            
             <SnackBar message="Hello, my name is Snackbar! Is this a new line? Well, kind of." />

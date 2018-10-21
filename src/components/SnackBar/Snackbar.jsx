@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Snackbar.css';
+import './SnackBar.css';
 import PropTypes from 'prop-types';
 import { COLORS, GRADIENTS } from '../ColorSchema';
 
@@ -65,7 +65,7 @@ class SnackBar extends Component {
         const style = {
             display: this.state.visible ? "flex" : "none",
             // display: this.state.visible ? "flex" : {animationName: "dismissSnackBar", animationDuration: "1s"},
-            background: GRADIENTS[this.props.backgroundColor],
+            background: GRADIENTS[this.props.background],
             height: SnackbarHeight,
         };
 
@@ -73,16 +73,16 @@ class SnackBar extends Component {
         //     color: this.props.messageColor,
         // };
 
-        // const dissmissLabelStyle = {
-        //     color: this.props.dismissLabelColor,
-        // };
+        const dissmissLabelStyle = {
+            color: this.props.dismissLabelColor,
+        };
 
         return (
             <div className="SnackBar" style={style}>
                 <div className="SnackBar-message">
                     {message}
                 </div>
-                <label className="SnackBar-button" onClick={this.handleClick}>
+                <label className="SnackBar-button" onClick={this.handleClick} style={dissmissLabelStyle}>
                     {this.props.dismissLabel}
                 </label> 
             </div> 
@@ -97,7 +97,7 @@ SnackBar.defaultProps = {
     visible: true,
     timeout: 5000,
     message: "NOTIFICATION!",
-    backgroundColor: "grey",
+    background: "grey",
     messageColor: "white",
     dismissLabelColor: "red",
 };
@@ -107,7 +107,7 @@ SnackBar.propTypes = {
     timeout: PropTypes.number,                              // TODO: add functionaility
     dismissLabel: PropTypes.string,
     message: PropTypes.string,
-    backgroundColor: PropTypes.oneOf(Object.keys(GRADIENTS)),
+    background: PropTypes.oneOf(Object.keys(GRADIENTS)),
     messageColor: PropTypes.oneOf(Object.keys(COLORS)),
     dismissLabelColor: PropTypes.oneOf(Object.keys(COLORS)),
     handleClick: PropTypes.func
