@@ -7,9 +7,14 @@ import Textbox from './components/Textbox/Textbox';
 import Slider from './components/Slider/Slider';
 import SnackBar from './components/SnackBar/Snackbar';
 import Alert from './components/Alert/Alert';
-import AppBar from './components/AppBar/AppBar';
+
+import RadioButton from './components/RadioButton/RadioButton';
+
+// import AppBar from './components/AppBar/AppBar';
 import cbIcon from './cbIcon.svg';
 import cbIcon2 from './cbIcon2.svg';
+// import Logo from './logo.png';
+
 class App extends Component {
   constructor(){
     super();
@@ -36,7 +41,10 @@ toggleModal = () => {
   render() {
     return (
       <div className="App">
-        <AppBar />
+        {/* <AppBar logo={Logo}>
+        <li><a href="/">Test 1</a></li>
+        <li><a href="/">Test 2</a></li>
+        </AppBar> */}
         
         <div className="left-div">
           <Switch /><br /><br />
@@ -67,8 +75,8 @@ toggleModal = () => {
             
 
             <SnackBar message="But, not this one!" />  
-            <br /> <br />
-            <SnackBar message="Hello, my name is Snackbar! Is this a new line? Well, kind of." />
+            {/* <br /> <br /> */}
+            {/* <SnackBar message="Hello, my name is Snackbar! Is this a new line? Well, kind of." /> */}
 <br /> <br />
             
         </div>
@@ -97,13 +105,16 @@ toggleModal = () => {
           <br /><br />
           <div className="slider-wrapper">
             <Slider startValue={10} />
-          </div>
+          </div><br/><br/>
+
+          <RadioButton title="red" theme="light" color="red" checked  />
+          <RadioButton title="yellow" theme="light" color="yellow" />
           <br /><br />
           
           <Alert show={this.state.isOpen}
                  onClose={this.toggleModal}
                  title="Success!">
-                 Picture was successfully saved.
+                 Send to: 
          </Alert>
         </div>
         <br />
