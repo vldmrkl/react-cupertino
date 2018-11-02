@@ -13,6 +13,20 @@
   user-select: none;
   width: 60px; }
 
+.small-rb-container {
+  padding-top: 0px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  text-align: start; }
+
+.medium-rb-container {
+  padding-top: 3px;
+  padding-left: 30px; }
+
+.large-rb-container {
+  padding-top: 10px;
+  padding-left: 40px; }
+
 /* Hide the browser's default radio button */
 .container input {
   position: absolute;
@@ -53,6 +67,25 @@
   height: 15px;
   border-radius: 50%;
   background: white; }
+
+.small-checkmark {
+  top: 3px;
+  width: 15px;
+  height: 15px; }
+
+.container .small-checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 9px;
+  height: 9px; }
+
+.large-checkmark {
+  width: 35px;
+  height: 35px; }
+
+.container .large-checkmark:after {
+  width: 25px;
+  height: 25px; }
 
 .dark-text {
   color: black; }

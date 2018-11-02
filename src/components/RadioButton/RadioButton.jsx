@@ -10,6 +10,8 @@ class RadioButton extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
     }
+    
+
 
     handleChange(e){
         this.setState({
@@ -20,13 +22,29 @@ class RadioButton extends React.Component {
     render() {
         return (
             <label className={"container " + 
+            this.props.size + "-rb-container " + 
             this.props.theme + "-text " + this.props.color + "-back"}>
             {this.props.title}
-                <input type="radio" onChange={this.handleChange} name="radio" />
-                <span className="checkmark"></span>
+                <input type="radio"
+                       defaultChecked={this.props.checked}
+                       onChange={this.handleChange}
+                       name="radio" />
+                <span className={"checkmark " + this.props.size + "-checkmark"}></span>
             </label>
         );
     }
+}
+
+RadioButton.defaultProps = {
+    color: 'blue',
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    theme: 'light'
+};
+
+RadioButton.propTypes ={
+    color: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    theme: PropTypes.oneOf(['dark', 'light']),
 }
 
 export default RadioButton;

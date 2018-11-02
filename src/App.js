@@ -106,9 +106,10 @@ toggleModal = () => {
           <div className="slider-wrapper">
             <Slider startValue={10} />
           </div><br/><br/>
-
-          <RadioButton title="red" theme="light" color="red" checked  />
-          <RadioButton title="yellow" theme="light" color="yellow" />
+          
+          <RadioButton title="Blue" theme="light" color="blue"  size="large"/>
+          <RadioButton title="(RED)" theme="light" color="red" checked  />
+          <RadioButton title="Green" theme="light" color="green" size="small" />
           <br /><br />
           
           <Alert show={this.state.isOpen}
