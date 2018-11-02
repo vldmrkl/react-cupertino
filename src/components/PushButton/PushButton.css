@@ -2,7 +2,8 @@
   color: white;
   outline-style: none;
   user-select: none;
-  border: none; }
+  border: none;
+  cursor: pointer; }
 
 .small-btn {
   height: 25px;
