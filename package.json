@@ -1,0 +1,19 @@
+{
+  "name": "react-cupertino",
+  "version": "0.1.0",
+  "description": "React UI Component library inspired by Apple's Design Philosophy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klymenkoo/react-cupertino.git"
+  },
+  "author": "Volodymyr Klymenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klymenkoo/react-cupertino/issues"
+  },
+  "homepage": "https://github.com/klymenkoo/react-cupertino#readme"
+}
