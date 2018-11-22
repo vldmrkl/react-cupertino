@@ -1,18 +1,18 @@
 {
   "name": "react-cupertino",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "React UI Component library inspired by Apple's Design Philosophy",
-  "main": "index.js",
+  "main": "lib/index/index.js",
   "husky": {
     "hooks": {
       "precommit": "NODE_ENV=production lint-staged"
     }
   },
   "scripts": {
+    "build": "webpack --mode production",
     "build-css": "node-sass-chokidar src/components/ -o src/components/",
     "dev": "webpack --mode development --env.dist=false",
     "dev:dist": "webpack --mode development",
-    "build": "webpack --mode production",
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
     "lint-staged": {
