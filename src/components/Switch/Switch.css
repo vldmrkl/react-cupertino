@@ -12,13 +12,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   border-radius: 34px; }
 
 .switch-base:before {
   position: absolute;
-  content: "";
+  content: '';
   left: 0px;
   bottom: -1px;
   background: white;
@@ -26,8 +26,8 @@
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   border-radius: 50%; }
 
 .small {
