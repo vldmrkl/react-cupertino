@@ -1,0 +1,162 @@
+@import '../ColorSchema.scss';
+
+@mixin track() {
+    background: $dark-gray-grad;
+}
+
+.cupertino-slider {
+    float: left;
+    outline-color: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    background: transparent;
+    width: 100%;
+    &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        @include track;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        height: 10px;
+        border-radius: 13px;
+        border: 0.2px solid #010101;
+    }
+    &::-webkit-slider-thumb {
+        margin-top: -3px;
+        outline: none;
+        -webkit-appearance: none;
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(180deg, white 0%, rgb(169, 169, 169) 100%);
+    }
+
+    &::-moz-range-track {
+        @include track;
+        height: 10px;
+        border-radius: 13px;
+        border: 0.2px solid #010101;
+    }
+
+    &::-moz-range-thumb{
+        margin-top: -3px;
+        outline: none;
+        -webkit-appearance: none;
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, white 0%, rgb(169, 169, 169) 100%);
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    }
+    &::-moz-range-progress{
+        height: 10px;
+        border-radius: 13px;
+    }
+
+    &::-moz-focus-outer {
+        border: 0;
+    }
+}
+
+.blue-progress::-moz-range-progress{
+    background: $blue-grad;
+}
+
+.blue-background::-webkit-slider-runnable-track{
+    background: $blue-grad;
+}
+
+.blue-background::-moz-range-track{
+    background: $blue-grad;
+}
+
+
+.grey-progress::-moz-range-progress{
+    background: $dark-gray-grad;
+}
+
+.grey-background::-webkit-slider-runnable-track{
+    background: $dark-gray-grad;
+}
+
+.grey-background::-moz-range-track{
+    background: $dark-gray-grad;
+}
+
+.green-progress::-moz-range-progress{
+    background: $green-grad;
+}
+
+.green-background::-webkit-slider-runnable-track{
+    background: $green-grad;
+}
+
+.green-background::-moz-range-track{
+    background: $green-grad;
+}
+
+.orange-progress::-moz-range-progress{
+    background: $orange-grad;
+}
+
+.orange-background::-webkit-slider-runnable-track{
+    background: $orange-grad;
+}
+
+.orange-background::-moz-range-track{
+    background: $orange-grad;
+}
+
+.pink-progress::-moz-range-progress{
+    background: $pink-grad;
+}
+
+.pink-background::-webkit-slider-runnable-track{
+    background: $pink-grad;
+}
+
+.pink-background::-moz-range-track{
+    background: $pink-grad;
+}
+
+
+.purple-progress::-moz-range-progress{
+    background: $purple-grad;
+}
+
+.purple-background::-webkit-slider-runnable-track{
+    background: $purple-grad;
+}
+
+.purple-background::-moz-range-track{
+    background: $purple-grad;
+}
+
+.red-progress::-moz-range-progress{
+    background: $red-grad;
+}
+
+.red-background::-webkit-slider-runnable-track{
+    background: $red-grad;
+}
+
+.red-background::-moz-range-track{
+    background: $red-grad;
+}
+
+.yellow-progress::-moz-range-progress{
+    background: $yellow-grad;
+}
+
+
+.yellow-background::-webkit-slider-runnable-track{
+    background: $yellow-grad;
+}
+
+.yellow-background::-moz-range-track{
+    background: $yellow-grad;
+}
