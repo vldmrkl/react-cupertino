@@ -18,6 +18,7 @@
   position: absolute;
   left: 50%;
   top: 40%;
+  font-family: Arial, Helvetica, sans-serif;
   transform: translate(-50%, -50%); }
 
 .alert-title {
@@ -43,3 +44,11 @@
     height: 20%;
     margin: auto;
     top: 50%; } }
+
+@media (max-height: 500px) {
+  .alert {
+    height: 25%; } }
+
+@media (max-height: 250px) {
+  .alert {
+    height: 50%; } }
