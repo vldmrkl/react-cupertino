@@ -1,3 +1,3 @@
 * text=auto
-*.scss linguist-detectable=false
+*.scss linguist-vendored=false
 
