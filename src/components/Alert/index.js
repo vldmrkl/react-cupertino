@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PushButton from '../PushButton';
 import './Alert.css';
 
@@ -28,5 +29,18 @@ class Alert extends React.Component {
     );
   }
 }
+
+Alert.defaultProps = {
+  onClose: null,
+  show: false,
+  title: ''
+};
+
+Alert.propTypes = {
+  children:  PropTypes.node.isRequired,
+  onClose: PropTypes.func,
+  show: PropTypes.bool,
+  title: PropTypes.string
+};
 
 export default Alert;
