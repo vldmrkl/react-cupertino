@@ -45,6 +45,7 @@ class Textbox extends React.Component {
         let extraStyleForLabel = {};
         if (this.state.invalid) {
             if (this.state.focused) {
+        const { type, label } = this.props;
                 extraStyle = { "border": "1px solid gray", "backgroundColor": "white" };
             } else {
                 extraStyle = { "border": "1px solid #FF2968", "backgroundColor": "#fcc2c7" };
@@ -55,10 +56,6 @@ class Textbox extends React.Component {
             extraStyleForLabel = {};
         }
 
-        let type = "text";
-        if (this.props.password) {
-            type = "password"
-        }
         return (
             <div className="tb-div">
                 <input type={type} className="cupertino-textbox"
@@ -67,7 +64,7 @@ class Textbox extends React.Component {
                     onFocus={this.handleFocus}
                     style={extraStyle}
                     required />
-                <span className="rs-float-label" style={extraStyleForLabel}>{this.props.label}</span>
+                <span className="rs-float-label" style={extraStyleForLabel}>{label}</span>
             </div>
         );
     }
@@ -76,13 +73,13 @@ class Textbox extends React.Component {
 Textbox.defaultProps = {
     invalid: false,
     label: '',
-    password: false
+    type: 'text'
 };
 
 Textbox.propTypes = {
     invalid: PropTypes.bool,
     label: PropTypes.string,
-    password: PropTypes.bool,
+    type: PropTypes.string
 };
 
 export default Textbox;
