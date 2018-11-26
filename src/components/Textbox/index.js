@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Textbox.css';
-
+/* eslint-disable react/no-unused-state */
 class Textbox extends React.Component {
     constructor(props) {
         super(props);
@@ -15,13 +15,16 @@ class Textbox extends React.Component {
     }
 
     componentDidMount() {
+        const { invalid } = this.props;
         this.setState({
-            invalid: this.props.invalid
-        })
+            invalid
+        });
     }
 
     componentWillReceiveProps(newProps) {
-        if (this.props.invalid !== newProps.invalid) {
+        const { invalid } = this.props;
+
+        if (invalid !== newProps.invalid) {
             this.setState({
                 invalid: newProps.invalid
             })
@@ -35,17 +38,22 @@ class Textbox extends React.Component {
     }
 
     handleFocus() {
+        const { focused }= this.state;
+
         this.setState({
-            focused: !this.state.focused
+            focused: !focused
         });
     }
 
     render() {
         let extraStyle = {};
         let extraStyleForLabel = {};
-        if (this.state.invalid) {
-            if (this.state.focused) {
+
+        const { invalid, focused } = this.state;
         const { type, label } = this.props;
+
+        if (invalid) {
+            if (focused) {
                 extraStyle = { "border": "1px solid gray", "backgroundColor": "white" };
             } else {
                 extraStyle = { "border": "1px solid #FF2968", "backgroundColor": "#fcc2c7" };
