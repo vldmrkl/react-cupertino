@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Textbox.css';
 
 class Textbox extends React.Component {
@@ -71,5 +72,17 @@ class Textbox extends React.Component {
         );
     }
 }
+
+Textbox.defaultProps = {
+    invalid: false,
+    label: '',
+    password: false
+};
+
+Textbox.propTypes = {
+    invalid: PropTypes.bool,
+    label: PropTypes.string,
+    password: PropTypes.bool,
+};
 
 export default Textbox;
