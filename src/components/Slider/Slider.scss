@@ -14,10 +14,8 @@
         -webkit-appearance: none;
         @include track;
         cursor: pointer;
-        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
         height: 10px;
         border-radius: 13px;
-        border: 0.2px solid #010101;
     }
     &::-webkit-slider-thumb {
         margin-top: -3px;
@@ -34,7 +32,6 @@
         @include track;
         height: 10px;
         border-radius: 13px;
-        border: 0.2px solid #010101;
     }
     &::-moz-range-thumb {
         margin-top: -3px;

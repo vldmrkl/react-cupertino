@@ -9,10 +9,8 @@
     -webkit-appearance: none;
     background: linear-gradient(180deg, #6c6c6c 0%, #434343 100%);
     cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     height: 10px;
-    border-radius: 13px;
-    border: 0.2px solid #010101; }
+    border-radius: 13px; }
   .cupertino-slider::-webkit-slider-thumb {
     margin-top: -3px;
     outline: none;
@@ -26,8 +24,7 @@
   .cupertino-slider::-moz-range-track {
     background: linear-gradient(180deg, #6c6c6c 0%, #434343 100%);
     height: 10px;
-    border-radius: 13px;
-    border: 0.2px solid #010101; }
+    border-radius: 13px; }
   .cupertino-slider::-moz-range-thumb {
     margin-top: -3px;
     outline: none;
