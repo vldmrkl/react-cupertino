@@ -49,10 +49,10 @@ class PushButton extends React.Component {
   }
 
   setDarkSolidColorBackground() {
-    let darkName =
-      'dark' +
-      this.props.color.charAt(0).toUpperCase() +
-      this.props.color.slice(1);
+    const darkName =
+      `dark${ 
+      this.props.color.charAt(0).toUpperCase() 
+      }${this.props.color.slice(1)}`;
     console.log(darkName);
     this.setState({
       background: COLORS[darkName]
@@ -62,7 +62,7 @@ class PushButton extends React.Component {
   render() {
     return (
       <button
-        className={'push-button ' + this.props.size + '-btn'}
+        className={`push-button ${  this.props.size  }-btn`}
         style={{
           background: this.state.background,
           fontFamily: this.state.fontFamily,

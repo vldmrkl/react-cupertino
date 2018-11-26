@@ -24,13 +24,13 @@ class Slider extends React.Component {
     }
 
     render() {
-        let progressColor = this.props.progressColor + "-progress";
-        let backgroundColor = this.props.backgroundColor + "-background";
+        const progressColor = `${this.props.progressColor  }-progress`;
+        const backgroundColor = `${this.props.backgroundColor  }-background`;
 
 
         return (
             <input type="range" onChange={this.handleChange}
-                className={"cupertino-slider " + progressColor + " " + backgroundColor}
+                className={`cupertino-slider ${  progressColor  } ${  backgroundColor}`}
                 value={this.state.value} min={this.props.minValue} max={this.props.maxValue} />
         );
     }

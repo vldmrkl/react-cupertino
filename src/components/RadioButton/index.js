@@ -21,15 +21,15 @@ class RadioButton extends React.Component {
 
     render() {
         return (
-            <label className={"container " + 
-            this.props.size + "-rb-container " + 
-            this.props.theme + "-text " + this.props.color + "-back"}>
+            <label className={`container ${  
+            this.props.size  }-rb-container ${  
+            this.props.theme  }-text ${  this.props.color  }-back`}>
             {this.props.title}
                 <input type="radio"
                        defaultChecked={this.props.checked}
                        onChange={this.handleChange}
                        name="radio" />
-                <span className={"checkmark " + this.props.size + "-checkmark"}></span>
+                <span className={`checkmark ${  this.props.size  }-checkmark`} />
             </label>
         );
     }
