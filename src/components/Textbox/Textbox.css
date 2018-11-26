@@ -13,6 +13,7 @@
 .cupertino-textbox {
   font-size: 12px;
   padding-top: 3%;
+  padding-left: 5%;
   width: 200px;
   height: 30px;
   outline: none;
@@ -27,7 +28,8 @@
 .rs-float-label {
   position: absolute;
   pointer-events: none;
-  left: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 5%;
   top: 20%;
   opacity: 0.8;
   transition: 0.25s ease all; }
