@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Checkbox.css';
 import { GRADIENTS } from '../../styles/ColorSchema';
-
-//TODO: fix icon's position
+import defaultIcon from './checkmark.svg';
 
 class Checkbox extends React.Component {
     constructor(props) {
@@ -70,11 +69,8 @@ class Checkbox extends React.Component {
         return (
             <span className={"cupertino-checkbox " + this.state.size + "-checkbox"}
                 style={{ background: this.state.color }}>
-                                
-
-
                     <img className={"checkbox-icon "} src={this.props.icon} 
-                     onClick={this.handleIconClick} alt="icon" />
+                     onClick={this.handleIconClick} alt="" />
             </span>
         );
     }
@@ -84,6 +80,7 @@ Checkbox.defaultProps = {
     checked: false,
     colorChecked: 'blue',
     colorUnchecked: 'grey',
+    icon: defaultIcon,
     size: 'small'
 };
 
@@ -91,6 +88,7 @@ Checkbox.propTypes = {
     checked: PropTypes.bool,
     colorChecked: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
     colorUnchecked: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
+    icon: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large'])
 }
 
