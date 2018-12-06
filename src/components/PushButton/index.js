@@ -53,7 +53,6 @@ class PushButton extends React.Component {
       `dark${ 
       this.props.color.charAt(0).toUpperCase() 
       }${this.props.color.slice(1)}`;
-    console.log(darkName);
     this.setState({
       background: COLORS[darkName]
     });
