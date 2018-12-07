@@ -20,16 +20,18 @@ class RadioButton extends React.Component {
     }
 
     render() {
+        const { checked, color, size, title, theme } = this.props;
+
         return (
             <label className={`container ${  
-            this.props.size  }-rb-container ${  
-            this.props.theme  }-text ${  this.props.color  }-back`}>
-            {this.props.title}
+            size  }-rb-container ${  
+            theme  }-text ${  color  }-back`}>
+            {title}
                 <input type="radio"
-                       defaultChecked={this.props.checked}
+                       defaultChecked={checked}
                        onChange={this.handleChange}
                        name="radio" />
-                <span className={`checkmark ${  this.props.size  }-checkmark`} />
+                <span className={`checkmark ${  size  }-checkmark`} />
             </label>
         );
     }

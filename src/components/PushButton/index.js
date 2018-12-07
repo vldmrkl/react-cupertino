@@ -19,61 +19,71 @@ class PushButton extends React.Component {
   }
 
   componentDidMount() {
+    const { color, style } = this.props;
     this.setState({
-      background: GRADIENTS[this.props.color]
+      background: GRADIENTS[color]
     });
 
-    if (this.props.style.fontSize) {
+    if (style.fontSize) {
       this.setState({
-        fontSize: this.props.style.fontSize
+        fontSize: style.fontSize
       });
     }
 
-    if (this.props.style.fontFamily) {
+    if (style.fontFamily) {
       this.setState({
-        fontFamily: this.props.style.fontFamily
+        fontFamily: style.fontFamily
       });
     }
   }
 
   setSolidColorBackground() {
+    const { color } = this.props;
+
     this.setState({
-      background: COLORS[this.props.color]
+      background: COLORS[color]
     });
   }
 
   setGradientBackground() {
+    const { color } = this.props;
+
     this.setState({
-      background: GRADIENTS[this.props.color]
+      background: GRADIENTS[color]
     });
   }
 
   setDarkSolidColorBackground() {
+    const { color } = this.props;
+
     const darkName =
       `dark${ 
-      this.props.color.charAt(0).toUpperCase() 
-      }${this.props.color.slice(1)}`;
+      color.charAt(0).toUpperCase() 
+      }${color.slice(1)}`;
     this.setState({
       background: COLORS[darkName]
     });
   }
 
   render() {
+    const { background, fontFamily, fontSize } = this.state;
+    const { click, size, title } = this.props;
+
     return (
       <button
-        className={`push-button ${  this.props.size  }-btn`}
+        className={`push-button ${  size  }-btn`}
         style={{
-          background: this.state.background,
-          fontFamily: this.state.fontFamily,
-          fontSize: this.state.fontSize
+          background: background,
+          fontFamily: fontFamily,
+          fontSize: fontSize
         }}
         onMouseEnter={this.setSolidColorBackground}
         onMouseLeave={this.setGradientBackground}
         onMouseUp={this.setGradientBackground}
         onMouseDown={this.setDarkSolidColorBackground}
-        onClick={this.props.click}
+        onClick={click}
       >
-        {this.props.title}
+        {title}
       </button>
     );
   }

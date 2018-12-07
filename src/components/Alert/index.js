@@ -5,23 +5,25 @@ import './Alert.css';
 
 class Alert extends React.Component {
   render() {
-    if (!this.props.show) {
+    const { children, onClose, show, title } = this.props;
+
+    if (!show) {
       return null;
     }
 
     return (
       <div className="alert-backdrop">
         <div className="alert">
-          {this.props.title && (
-            <h1 className="alert-title">{this.props.title}</h1>
+          {title && (
+            <h1 className="alert-title">{title}</h1>
           )}
-          <div className="alert-content">{this.props.children}</div>
+          <div className="alert-content">{children}</div>
           <div className="alert-footer">
             <PushButton
               title="OK"
               color="blue"
               size="small"
-              click={this.props.onClose}
+              click={onClose}
             />
           </div>
         </div>

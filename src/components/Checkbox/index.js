@@ -17,19 +17,22 @@ class Checkbox extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.size) {
+        const { size, checked, colorChecked, colorUnchecked } = this.props;
+
+        if (size) {
             this.setState({
-                checked: this.props.checked
+                checked
             }, ()=>{
+                /* eslint-disable-next-line */
                 if(this.state.checked){
                     this.setState({
-                        size: this.props.size,
-                        color: GRADIENTS[this.props.colorChecked]
+                        size,
+                        color: GRADIENTS[colorChecked]
                     });
                 } else{
                     this.setState({
-                        size: this.props.size,
-                        color: GRADIENTS[this.props.colorUnchecked]
+                        size,
+                        color: GRADIENTS[colorUnchecked]
                     });
                 }
             });
@@ -45,32 +48,36 @@ class Checkbox extends React.Component {
     }
 
     handleIconClick() {
+        const { checked } = this.state;
+
         this.setState({
-            checked: !this.state.checked
+            checked: !checked
         }, () => {
-            this.changeColor(this.state.checked)
+            this.changeColor(checked)
         });
 
     }
 
     changeColor(checked) {
+        const { colorChecked, colorUnchecked } = this.props;
         if (checked) {
             this.setState({
-                color: GRADIENTS[this.props.colorChecked]
+                color: GRADIENTS[colorChecked]
             });
         } else {
             this.setState({
-                color: GRADIENTS[this.props.colorUnchecked]
+                color: GRADIENTS[colorUnchecked]
             });
         }
     }
 
     render() {
+        const { icon } = this.props;
+        const { color, size } = this.state;
         return (
-            <span className={`cupertino-checkbox ${  this.state.size  }-checkbox`}
-                style={{ background: this.state.color }}>
-                    <img className="checkbox-icon " src={this.props.icon} 
-                     onClick={this.handleIconClick} alt="" />
+            <span className={`cupertino-checkbox ${  size  }-checkbox`}
+                style={{ background: color }}>
+                    <img className="checkbox-icon " src={icon} onClick={this.handleIconClick} alt="Checkbox" />
             </span>
         );
     }

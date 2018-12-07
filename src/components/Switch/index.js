@@ -14,19 +14,22 @@ class Switch extends React.Component{
     }
     
     componentDidMount(){
-        if(this.props.checked){
+        const { checked, colorChecked, colorUnchecked } = this.props;
+
+        if(checked){
             this.setState({
                 checked: true,
-                switchColor: GRADIENTS[this.props.colorChecked]
+                switchColor: GRADIENTS[colorChecked]
             });
         } else{
             this.setState({
-                switchColor: GRADIENTS[this.props.colorUnchecked]
+                switchColor: GRADIENTS[colorUnchecked]
             });
         }
     }
         
     handleChange(event){
+        const { colorChecked, colorUnchecked } = this.props;
         this.setState({
             checked: event.target.checked
         });
@@ -34,14 +37,14 @@ class Switch extends React.Component{
         if(event.target.checked){
             setTimeout(() => {
                 this.setState({
-                    switchColor: GRADIENTS[this.props.colorChecked]
+                    switchColor: GRADIENTS[colorChecked]
                 });
             }, 200);
             
         } else{
             setTimeout(() => {
                 this.setState({
-                    switchColor: GRADIENTS[this.props.colorUnchecked]
+                    switchColor: GRADIENTS[colorUnchecked]
                 });
             }, 200);
            
@@ -49,10 +52,13 @@ class Switch extends React.Component{
     }
 
     render(){
+        const { checked, switchColor } = this.state;
+        const { size } = this.props;
+
         return(
-            <label className={`switch ${  this.props.size}`}>
-                <input type="checkbox" onChange={this.handleChange} checked={this.state.checked} />
-                <span className={`switch-base ${  this.props.size  }-base`} style={{background: this.state.switchColor}} />
+            <label className={`switch ${  size}`}>
+                <input type="checkbox" onChange={this.handleChange} checked={checked} />
+                <span className={`switch-base ${  size  }-base`} style={{background: switchColor}} />
             </label>
         );
     }
