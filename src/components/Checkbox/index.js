@@ -53,7 +53,8 @@ class Checkbox extends React.Component {
         this.setState({
             checked: !checked
         }, () => {
-            this.changeColor(checked)
+            /* eslint-disable-next-line */
+            this.changeColor(this.state.checked);
         });
 
     }
