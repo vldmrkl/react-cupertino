@@ -82,6 +82,7 @@ class PushButton extends React.Component {
         onMouseUp={this.setGradientBackground}
         onMouseDown={this.setDarkSolidColorBackground}
         onClick={click}
+        type="button"
       >
         {title}
       </button>
