@@ -73,9 +73,9 @@ class PushButton extends React.Component {
       <button
         className={`push-button ${  size  }-btn`}
         style={{
-          background: background,
-          fontFamily: fontFamily,
-          fontSize: fontSize
+          background,
+          fontFamily,
+          fontSize
         }}
         onMouseEnter={this.setSolidColorBackground}
         onMouseLeave={this.setGradientBackground}
