@@ -56,8 +56,8 @@ class Switch extends React.Component{
         const { size } = this.props;
 
         return(
-            <label className={`switch ${  size}`}>
-                <input type="checkbox" onChange={this.handleChange} checked={checked} />
+            <label className={`switch ${  size}`} htmlFor="def-rc-cb">
+                <input type="checkbox" id="def-rc-cb" onChange={this.handleChange} checked={checked} />
                 <span className={`switch-base ${  size  }-base`} style={{background: switchColor}} />
             </label>
         );

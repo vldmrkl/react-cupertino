@@ -25,9 +25,10 @@ class RadioButton extends React.Component {
         return (
             <label className={`container ${  
             size  }-rb-container ${  
-            theme  }-text ${  color  }-back`}>
+            theme  }-text ${  color  }-back`} htmlFor="def-rc-radio">
             {title}
                 <input type="radio"
+                       id="def-rc-radio"
                        defaultChecked={checked}
                        onChange={this.handleChange}
                        name="radio" />
