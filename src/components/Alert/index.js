@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import PushButton from '../PushButton';
 import './Alert.css';
 
-class Alert extends React.Component {
-  render() {
-    const { children, onClose, show, title } = this.props;
+function Alert(props){
+    const { children, onClose, show, title } = props;
 
     if (!show) {
       return null;
@@ -29,7 +28,6 @@ class Alert extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 Alert.defaultProps = {
