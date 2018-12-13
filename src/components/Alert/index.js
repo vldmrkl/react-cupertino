@@ -3,31 +3,24 @@ import PropTypes from 'prop-types';
 import PushButton from '../PushButton';
 import './Alert.css';
 
-class Alert extends React.Component {
-  render() {
-    if (!this.props.show) {
-      return null;
-    }
+function Alert(props) {
+  const { children, onClose, show, title } = props;
 
-    return (
-      <div className="alert-backdrop">
-        <div className="alert">
-          {this.props.title && (
-            <h1 className="alert-title">{this.props.title}</h1>
-          )}
-          <div className="alert-content">{this.props.children}</div>
-          <div className="alert-footer">
-            <PushButton
-              title="OK"
-              color="blue"
-              size="small"
-              click={this.props.onClose}
-            />
-          </div>
+  if (!show) {
+    return null;
+  }
+
+  return (
+    <div className="alert-backdrop">
+      <div className="alert">
+        {title && <h1 className="alert-title">{title}</h1>}
+        <div className="alert-content">{children}</div>
+        <div className="alert-footer">
+          <PushButton title="OK" color="blue" size="small" click={onClose} />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 Alert.defaultProps = {
@@ -37,7 +30,7 @@ Alert.defaultProps = {
 };
 
 Alert.propTypes = {
-  children:  PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   onClose: PropTypes.func,
   show: PropTypes.bool,
   title: PropTypes.string

@@ -6,5 +6,5 @@ import Textbox from '../components/Textbox';
 storiesOf('Textbox', module)
   .add('empty', () => <Textbox />)
   .add('with label props', () => <Textbox label="Login" />)
-  .add('password', () => <Textbox label="Password" password />)
+  .add('password', () => <Textbox label="Password" type="password" />)
   .add('invalid', () => <Textbox label="Login" invalid />);

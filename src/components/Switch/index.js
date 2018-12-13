@@ -3,73 +3,103 @@ import PropTypes from 'prop-types';
 import './Switch.css';
 import { GRADIENTS } from '../../styles/ColorSchema';
 
-class Switch extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            switchColor: null,
-            checked: false
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
-    
-    componentDidMount(){
-        if(this.props.checked){
-            this.setState({
-                checked: true,
-                switchColor: GRADIENTS[this.props.colorChecked]
-            });
-        } else{
-            this.setState({
-                switchColor: GRADIENTS[this.props.colorUnchecked]
-            });
-        }
-    }
-        
-    handleChange(event){
-        this.setState({
-            checked: event.target.checked
-        });
-        
-        if(event.target.checked){
-            setTimeout(() => {
-                this.setState({
-                    switchColor: GRADIENTS[this.props.colorChecked]
-                });
-            }, 200);
-            
-        } else{
-            setTimeout(() => {
-                this.setState({
-                    switchColor: GRADIENTS[this.props.colorUnchecked]
-                });
-            }, 200);
-           
-        }
-    }
+class Switch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      switchColor: null,
+      checked: false
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-    render(){
-        return(
-            <label className={"switch " + this.props.size}>
-                <input type="checkbox" onChange={this.handleChange} checked={this.state.checked} />
-                <span className={"switch-base " + this.props.size + "-base"} style={{background: this.state.switchColor}}></span>
-            </label>
-        );
+  componentDidMount() {
+    const { checked, colorChecked, colorUnchecked } = this.props;
+
+    if (checked) {
+      this.setState({
+        checked: true,
+        switchColor: GRADIENTS[colorChecked]
+      });
+    } else {
+      this.setState({
+        switchColor: GRADIENTS[colorUnchecked]
+      });
     }
+  }
+
+  handleChange(event) {
+    const { colorChecked, colorUnchecked } = this.props;
+    this.setState({
+      checked: event.target.checked
+    });
+
+    if (event.target.checked) {
+      setTimeout(() => {
+        this.setState({
+          switchColor: GRADIENTS[colorChecked]
+        });
+      }, 200);
+    } else {
+      setTimeout(() => {
+        this.setState({
+          switchColor: GRADIENTS[colorUnchecked]
+        });
+      }, 200);
+    }
+  }
+
+  render() {
+    const { checked, switchColor } = this.state;
+    const { size } = this.props;
+
+    return (
+      <label className={`switch ${size}`} htmlFor="def-rc-cb">
+        <input
+          type="checkbox"
+          id="def-rc-cb"
+          onChange={this.handleChange}
+          checked={checked}
+        />
+        <span
+          className={`switch-base ${size}-base`}
+          style={{ background: switchColor }}
+        />
+      </label>
+    );
+  }
 }
 
 Switch.defaultProps = {
-    checked: false,
-    colorChecked: 'green',
-    colorUnchecked: 'grey',
-    size: 'medium'
+  checked: false,
+  colorChecked: 'green',
+  colorUnchecked: 'grey',
+  size: 'medium'
 };
 
 Switch.propTypes = {
-    checked: PropTypes.bool,
-    colorChecked: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
-    colorUnchecked: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
-    size: PropTypes.oneOf(['small', 'medium', 'large'])
+  checked: PropTypes.bool,
+  colorChecked: PropTypes.oneOf([
+    'blue',
+    'grey',
+    'green',
+    'orange',
+    'pink',
+    'purple',
+    'red',
+    'yellow'
+  ]),
+  colorUnchecked: PropTypes.oneOf([
+    'blue',
+    'grey',
+    'green',
+    'orange',
+    'pink',
+    'purple',
+    'red',
+    'yellow'
+  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
 export default Switch;
