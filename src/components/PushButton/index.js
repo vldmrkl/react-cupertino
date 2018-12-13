@@ -94,8 +94,8 @@ PushButton.defaultProps = {
   color: 'blue',
   size: 'medium',
   style: {
+    fontFamily: 'Arial, Helvetica, sans-serif',
     fontSize: '12px',
-    fontFamily: 'Arial, Helvetica, sans-serif'
   },
   title: 'Title'
 };
@@ -112,7 +112,10 @@ PushButton.propTypes = {
     'yellow'
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  style: PropTypes.object,
+  style: PropTypes.shape({
+    fontFamily: PropTypes.string,
+    fontSize: PropTypes.string
+  }),
   title: PropTypes.string
 };
 
