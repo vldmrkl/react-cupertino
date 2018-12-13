@@ -3,79 +3,103 @@ import PropTypes from 'prop-types';
 import './Switch.css';
 import { GRADIENTS } from '../../styles/ColorSchema';
 
-class Switch extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            switchColor: null,
-            checked: false
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
-    
-    componentDidMount(){
-        const { checked, colorChecked, colorUnchecked } = this.props;
+class Switch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      switchColor: null,
+      checked: false
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-        if(checked){
-            this.setState({
-                checked: true,
-                switchColor: GRADIENTS[colorChecked]
-            });
-        } else{
-            this.setState({
-                switchColor: GRADIENTS[colorUnchecked]
-            });
-        }
+  componentDidMount() {
+    const { checked, colorChecked, colorUnchecked } = this.props;
+
+    if (checked) {
+      this.setState({
+        checked: true,
+        switchColor: GRADIENTS[colorChecked]
+      });
+    } else {
+      this.setState({
+        switchColor: GRADIENTS[colorUnchecked]
+      });
     }
-        
-    handleChange(event){
-        const { colorChecked, colorUnchecked } = this.props;
+  }
+
+  handleChange(event) {
+    const { colorChecked, colorUnchecked } = this.props;
+    this.setState({
+      checked: event.target.checked
+    });
+
+    if (event.target.checked) {
+      setTimeout(() => {
         this.setState({
-            checked: event.target.checked
+          switchColor: GRADIENTS[colorChecked]
         });
-        
-        if(event.target.checked){
-            setTimeout(() => {
-                this.setState({
-                    switchColor: GRADIENTS[colorChecked]
-                });
-            }, 200);
-            
-        } else{
-            setTimeout(() => {
-                this.setState({
-                    switchColor: GRADIENTS[colorUnchecked]
-                });
-            }, 200);
-           
-        }
+      }, 200);
+    } else {
+      setTimeout(() => {
+        this.setState({
+          switchColor: GRADIENTS[colorUnchecked]
+        });
+      }, 200);
     }
+  }
 
-    render(){
-        const { checked, switchColor } = this.state;
-        const { size } = this.props;
+  render() {
+    const { checked, switchColor } = this.state;
+    const { size } = this.props;
 
-        return(
-            <label className={`switch ${  size}`} htmlFor="def-rc-cb">
-                <input type="checkbox" id="def-rc-cb" onChange={this.handleChange} checked={checked} />
-                <span className={`switch-base ${  size  }-base`} style={{background: switchColor}} />
-            </label>
-        );
-    }
+    return (
+      <label className={`switch ${size}`} htmlFor="def-rc-cb">
+        <input
+          type="checkbox"
+          id="def-rc-cb"
+          onChange={this.handleChange}
+          checked={checked}
+        />
+        <span
+          className={`switch-base ${size}-base`}
+          style={{ background: switchColor }}
+        />
+      </label>
+    );
+  }
 }
 
 Switch.defaultProps = {
-    checked: false,
-    colorChecked: 'green',
-    colorUnchecked: 'grey',
-    size: 'medium'
+  checked: false,
+  colorChecked: 'green',
+  colorUnchecked: 'grey',
+  size: 'medium'
 };
 
 Switch.propTypes = {
-    checked: PropTypes.bool,
-    colorChecked: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
-    colorUnchecked: PropTypes.oneOf(['blue', 'grey', 'green', 'orange', 'pink', 'purple', 'red', 'yellow']),
-    size: PropTypes.oneOf(['small', 'medium', 'large'])
+  checked: PropTypes.bool,
+  colorChecked: PropTypes.oneOf([
+    'blue',
+    'grey',
+    'green',
+    'orange',
+    'pink',
+    'purple',
+    'red',
+    'yellow'
+  ]),
+  colorUnchecked: PropTypes.oneOf([
+    'blue',
+    'grey',
+    'green',
+    'orange',
+    'pink',
+    'purple',
+    'red',
+    'yellow'
+  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
 export default Switch;
