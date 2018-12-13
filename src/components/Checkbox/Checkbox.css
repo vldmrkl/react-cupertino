@@ -11,7 +11,8 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: #eee; }
+  background-color: #eee;
+  outline: none; }
 
 .small-checkbox {
   height: 15px;

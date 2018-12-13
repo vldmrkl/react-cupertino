@@ -74,11 +74,17 @@ class Checkbox extends React.Component {
 
     render() {
         const { icon } = this.props;
-        const { color, size } = this.state;
+        const { checked, color, size } = this.state;
         return (
             <span className={`cupertino-checkbox ${  size  }-checkbox`}
-                style={{ background: color }}>
-                    <img className="checkbox-icon " src={icon} onClick={this.handleIconClick} alt="Checkbox" />
+                style={{ background: color }}
+                onClick={this.handleIconClick} 
+                onKeyDown={this.handleIconClick}
+                tabIndex="0"
+                role="checkbox"
+                aria-checked={checked}
+                >
+                    <img className="checkbox-icon " src={icon} alt="Checkbox" />
             </span>
         );
     }
