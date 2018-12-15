@@ -100,7 +100,7 @@ class SnackBar extends React.Component {
   }
 
   render() {
-    const { message, SnackbarHeight } = this.generateMessage();
+    const { generatedMessage, SnackbarHeight } = this.generateMessage();
     const { dismissLabelColor, dismissLabel } = this.props;
     const { visible } = this.state;
     let style = {
@@ -118,7 +118,7 @@ class SnackBar extends React.Component {
     /* eslint-disable jsx-a11y/label-has-for */
     return (
       <div className="SnackBar" style={style}>
-        <div className="SnackBar-message">{message}</div>
+        <div className="SnackBar-message">{generatedMessage}</div>
         <label
           className="SnackBar-button"
           onClick={this.handleClick}
