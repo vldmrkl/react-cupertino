@@ -10,7 +10,8 @@
   color: white;
   user-select: none;
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px); }
+  -webkit-backdrop-filter: blur(5px);
+  position: fixed; }
 
 .SnackBar-message {
   padding: 0px 16px;
@@ -18,7 +19,6 @@
   text-align: left; }
 
 .SnackBar-button {
-  /* margin: 20px; */
   padding: 6px 8px;
   font-size: 15px;
   color: #FF3B30; }
