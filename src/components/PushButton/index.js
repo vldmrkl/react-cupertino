@@ -68,7 +68,7 @@ class PushButton extends React.Component {
 
     return (
       <button
-        className={`push-button ${size}-btn`}
+        className={`rc-push-button rc-${size}-btn`}
         style={{
           background,
           fontFamily,
