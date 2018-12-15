@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Snackbar.css';
 import PropTypes from 'prop-types';
-import { COLORS, GRADIENTS } from '../../styles/ColorSchema';
+import { COLORS, GRADIENTS } from '../ColorSchema';
 
 
 class SnackBar extends Component {
@@ -55,19 +55,49 @@ class SnackBar extends Component {
         return {message, SnackbarHeight};
     }
 
+    setPosition() {
+        const style = {};
+        const offset = "10px";
+        switch(this.props.position) {
+            case "top-left":
+            style.top = offset;
+            style.left = offset;
+            break;
+
+            case "top-right":
+            style.top = offset;
+            style.right = offset;
+            break;
+            
+            case "bottom-right":
+            style.bottom = offset;
+            style.right = offset;
+            break;
+            
+            default:
+            case "bottom-left":
+            style.bottom = offset;
+            style.left = offset;
+            break;
+        }
+        return style;
+    }
+
     render() {
         const { message, SnackbarHeight } = this.generateMessage();
 
         // const dismissButtonPaddingLeftRight = "8px";
         // const dismissButtonPaddingTopBottom = "6px";
 
-
-        const style = {
+        
+        let style = {
             display: this.state.visible ? "flex" : "none",
             // display: this.state.visible ? "flex" : {animationName: "dismissSnackBar", animationDuration: "1s"},
             // background: GRADIENTS[this.props.background],
             height: SnackbarHeight,
         };
+
+        style = Object.assign(style, this.setPosition());
 
         // const messageStyle = {
         //     color: this.props.messageColor,
@@ -89,6 +119,10 @@ class SnackBar extends Component {
         );
     }
 
+    componentDidMount() {
+        setTimeout(this.onClickDismiss, this.props.timeout);
+    }
+
 }
 
 
@@ -97,6 +131,7 @@ SnackBar.defaultProps = {
     visible: true,
     timeout: 5000,
     message: "NOTIFICATION!",
+    position: "bottom-left",
     background: "grey",
     messageColor: "white",
     dismissLabelColor: "red",
@@ -104,13 +139,14 @@ SnackBar.defaultProps = {
 
 SnackBar.propTypes = {
     visible: PropTypes.bool,
-    timeout: PropTypes.number,                              // TODO: add functionaility
+    timeout: PropTypes.number,
     dismissLabel: PropTypes.string,
     message: PropTypes.string,
+    position: PropTypes.oneOf("bottom-left", "bottom-right", "top-left", "top-right"),
     background: PropTypes.oneOf(Object.keys(GRADIENTS)),
     messageColor: PropTypes.oneOf(Object.keys(COLORS)),
     dismissLabelColor: PropTypes.oneOf(Object.keys(COLORS)),
-    handleClick: PropTypes.func
+    handleClick: PropTypes.func,
 };
 
 export default SnackBar;

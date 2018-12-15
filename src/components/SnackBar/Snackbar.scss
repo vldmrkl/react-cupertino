@@ -5,15 +5,14 @@
     align-items: center;
     height: 48px;
     width: 344px;
-    // background: linear-gradient(180deg, #1BADF8 0%, #2B7DE5 100%);
     background: rgba(black, 0.8);
     border-radius: 10px;
     color: white;
     user-select: none;
     backdrop-filter: blur(5px);  
     -webkit-backdrop-filter: blur(5px);
-
-  
+    
+    position: fixed;
 }
 
 .SnackBar-message {
@@ -23,10 +22,8 @@
 }
 
 .SnackBar-button {
-    /* margin: 20px; */
     padding: 6px 8px;
     font-size: 15px;
-    // font-weight: bold;
     color: #FF3B30;
 }
 
