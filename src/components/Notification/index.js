@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { COLORS } from '../../styles/ColorSchema';
-import './Snackbar.css';
+import './Notification.css';
 
-class SnackBar extends React.Component {
+class Notification extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,7 +54,7 @@ class SnackBar extends React.Component {
   generateMessage() {
     const { message } = this.props;
     let generatedMessage = [];
-    let SnackbarHeight;
+    let NotificationHeight;
     if (message > 35) {
       let line1Complete = false;
       generatedMessage = message
@@ -76,10 +76,10 @@ class SnackBar extends React.Component {
           }
           return arr;
         }, []);
-      SnackbarHeight = '68px';
+      NotificationHeight = '68px';
     } else {
       generatedMessage = generatedMessage.concat(message);
-      SnackbarHeight = '48px';
+      NotificationHeight = '48px';
     }
 
     // wrap message lines in <p>
@@ -89,7 +89,7 @@ class SnackBar extends React.Component {
       </p>
     ));
 
-    return { generatedMessage, SnackbarHeight };
+    return { generatedMessage, NotificationHeight };
   }
 
   handleClick() {
@@ -100,12 +100,12 @@ class SnackBar extends React.Component {
   }
 
   render() {
-    const { generatedMessage, SnackbarHeight } = this.generateMessage();
+    const { generatedMessage, NotificationHeight } = this.generateMessage();
     const { dismissLabelColor, dismissLabel } = this.props;
     const { visible } = this.state;
     let style = {
       display: visible ? 'flex' : 'none',
-      height: SnackbarHeight
+      height: NotificationHeight
     };
 
     style = Object.assign(style, this.setPosition());
@@ -131,7 +131,7 @@ class SnackBar extends React.Component {
   }
 }
 
-SnackBar.defaultProps = {
+Notification.defaultProps = {
   dismissLabel: 'DISMISS',
   visible: true,
   timeout: 5000,
@@ -140,7 +140,7 @@ SnackBar.defaultProps = {
   dismissLabelColor: 'red'
 };
 
-SnackBar.propTypes = {
+Notification.propTypes = {
   visible: PropTypes.bool,
   timeout: PropTypes.number,
   dismissLabel: PropTypes.string,
@@ -155,4 +155,4 @@ SnackBar.propTypes = {
   handleClick: PropTypes.func
 };
 
-export default SnackBar;
+export default Notification;
