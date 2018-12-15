@@ -15,11 +15,14 @@
 
 .SnackBar-message {
   padding: 0px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
   font-size: 14px;
   text-align: left; }
 
 .SnackBar-button {
   padding: 6px 8px;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   color: #FF3B30; }
 
