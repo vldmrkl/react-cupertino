@@ -11,11 +11,11 @@ function Alert(props) {
   }
 
   return (
-    <div className="alert-backdrop">
-      <div className="alert">
-        {title && <h1 className="alert-title">{title}</h1>}
-        <div className="alert-content">{children}</div>
-        <div className="alert-footer">
+    <div className="rc-alrt-backdrop">
+      <div className="rc-alrt">
+        {title && <h1 className="rc-alrt-title">{title}</h1>}
+        <div className="rc-alrt-content">{children}</div>
+        <div className="rc-alrt-footer">
           <PushButton title="OK" color="blue" size="small" click={onClose} />
         </div>
       </div>
