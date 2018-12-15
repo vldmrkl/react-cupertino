@@ -36,7 +36,7 @@ class Slider extends React.Component {
       <input
         type="range"
         onChange={this.handleChange}
-        className={`cupertino-slider ${progressColorClass} ${backgroundColorClass}`}
+        className={`rc-slider rc-slider-${progressColorClass} rc-slider-${backgroundColorClass}`}
         value={value}
         min={minValue}
         max={maxValue}

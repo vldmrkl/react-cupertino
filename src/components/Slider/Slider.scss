@@ -3,7 +3,7 @@
     background: $dark-gray-grad;
 }
 
-.cupertino-slider {
+.rc-slider {
     float: left;
     outline-color: transparent;
     outline: none;
@@ -55,98 +55,98 @@
     }
 }
 
-.blue-progress::-moz-range-progress {
+.rc-slider-blue-progress::-moz-range-progress {
     background: $blue-grad;
 }
 
-.blue-background::-webkit-slider-runnable-track {
+.rc-slider-blue-background::-webkit-slider-runnable-track {
     background: $blue-grad;
 }
 
-.blue-background::-moz-range-track {
+.rc-slider-blue-background::-moz-range-track {
     background: $blue-grad;
 }
 
-.grey-progress::-moz-range-progress {
+.rc-slider-grey-progress::-moz-range-progress {
     background: $dark-gray-grad;
 }
 
-.grey-background::-webkit-slider-runnable-track {
+.rc-slider-grey-background::-webkit-slider-runnable-track {
     background: $dark-gray-grad;
 }
 
-.grey-background::-moz-range-track {
+.rc-slider-grey-background::-moz-range-track {
     background: $dark-gray-grad;
 }
 
-.green-progress::-moz-range-progress {
+.rc-slider-green-progress::-moz-range-progress {
     background: $green-grad;
 }
 
-.green-background::-webkit-slider-runnable-track {
+.rc-slider-green-background::-webkit-slider-runnable-track {
     background: $green-grad;
 }
 
-.green-background::-moz-range-track {
+.rc-slider-green-background::-moz-range-track {
     background: $green-grad;
 }
 
-.orange-progress::-moz-range-progress {
+.rc-slider-orange-progress::-moz-range-progress {
     background: $orange-grad;
 }
 
-.orange-background::-webkit-slider-runnable-track {
+.rc-slider-orange-background::-webkit-slider-runnable-track {
     background: $orange-grad;
 }
 
-.orange-background::-moz-range-track {
+.rc-slider-orange-background::-moz-range-track {
     background: $orange-grad;
 }
 
-.pink-progress::-moz-range-progress {
+.rc-slider-pink-progress::-moz-range-progress {
     background: $pink-grad;
 }
 
-.pink-background::-webkit-slider-runnable-track {
+.rc-slider-pink-background::-webkit-slider-runnable-track {
     background: $pink-grad;
 }
 
-.pink-background::-moz-range-track {
+.rc-slider-pink-background::-moz-range-track {
     background: $pink-grad;
 }
 
-.purple-progress::-moz-range-progress {
+.rc-slider-purple-progress::-moz-range-progress {
     background: $purple-grad;
 }
 
-.purple-background::-webkit-slider-runnable-track {
+.rc-slider-purple-background::-webkit-slider-runnable-track {
     background: $purple-grad;
 }
 
-.purple-background::-moz-range-track {
+.rc-slider-purple-background::-moz-range-track {
     background: $purple-grad;
 }
 
-.red-progress::-moz-range-progress {
+.rc-slider-red-progress::-moz-range-progress {
     background: $red-grad;
 }
 
-.red-background::-webkit-slider-runnable-track {
+.rc-slider-red-background::-webkit-slider-runnable-track {
     background: $red-grad;
 }
 
-.red-background::-moz-range-track {
+.rc-slider-red-background::-moz-range-track {
     background: $red-grad;
 }
 
-.yellow-progress::-moz-range-progress {
+.rc-slider-yellow-progress::-moz-range-progress {
     background: $yellow-grad;
 }
 
-.yellow-background::-webkit-slider-runnable-track {
+.rc-slider-yellow-background::-webkit-slider-runnable-track {
     background: $yellow-grad;
 }
 
-.yellow-background::-moz-range-track {
+.rc-slider-yellow-background::-moz-range-track {
     background: $yellow-grad;
 }

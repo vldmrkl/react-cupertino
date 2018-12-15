@@ -1,17 +1,17 @@
-.cupertino-slider {
+.rc-slider {
   float: left;
   outline-color: transparent;
   outline: none;
   -webkit-appearance: none;
   background: transparent;
   width: 100%; }
-  .cupertino-slider::-webkit-slider-runnable-track {
+  .rc-slider::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     background: linear-gradient(180deg, #6c6c6c 0%, #434343 100%);
     cursor: pointer;
     height: 10px;
     border-radius: 13px; }
-  .cupertino-slider::-webkit-slider-thumb {
+  .rc-slider::-webkit-slider-thumb {
     margin-top: -3px;
     outline: none;
     -webkit-appearance: none;
@@ -21,11 +21,11 @@
     border-radius: 50%;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     background: linear-gradient(180deg, white 0%, darkgray 100%); }
-  .cupertino-slider::-moz-range-track {
+  .rc-slider::-moz-range-track {
     background: linear-gradient(180deg, #6c6c6c 0%, #434343 100%);
     height: 10px;
     border-radius: 13px; }
-  .cupertino-slider::-moz-range-thumb {
+  .rc-slider::-moz-range-thumb {
     margin-top: -3px;
     outline: none;
     -webkit-appearance: none;
@@ -37,80 +37,80 @@
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5); }
-  .cupertino-slider::-moz-range-progress {
+  .rc-slider::-moz-range-progress {
     height: 10px;
     border-radius: 13px; }
-  .cupertino-slider::-moz-focus-outer {
+  .rc-slider::-moz-focus-outer {
     border: 0; }
 
-.blue-progress::-moz-range-progress {
+.rc-slider-blue-progress::-moz-range-progress {
   background: linear-gradient(180deg, #1badf8 0%, #2b7de5 100%); }
 
-.blue-background::-webkit-slider-runnable-track {
+.rc-slider-blue-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #1badf8 0%, #2b7de5 100%); }
 
-.blue-background::-moz-range-track {
+.rc-slider-blue-background::-moz-range-track {
   background: linear-gradient(180deg, #1badf8 0%, #2b7de5 100%); }
 
-.grey-progress::-moz-range-progress {
+.rc-slider-grey-progress::-moz-range-progress {
   background: linear-gradient(180deg, #6c6c6c 0%, #434343 100%); }
 
-.grey-background::-webkit-slider-runnable-track {
+.rc-slider-grey-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #6c6c6c 0%, #434343 100%); }
 
-.grey-background::-moz-range-track {
+.rc-slider-grey-background::-moz-range-track {
   background: linear-gradient(180deg, #6c6c6c 0%, #434343 100%); }
 
-.green-progress::-moz-range-progress {
+.rc-slider-green-progress::-moz-range-progress {
   background: linear-gradient(180deg, #63da38 0%, #00ab21 100%); }
 
-.green-background::-webkit-slider-runnable-track {
+.rc-slider-green-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #63da38 0%, #00ab21 100%); }
 
-.green-background::-moz-range-track {
+.rc-slider-green-background::-moz-range-track {
   background: linear-gradient(180deg, #63da38 0%, #00ab21 100%); }
 
-.orange-progress::-moz-range-progress {
+.rc-slider-orange-progress::-moz-range-progress {
   background: linear-gradient(180deg, #ff9500 0%, #d75f00 100%); }
 
-.orange-background::-webkit-slider-runnable-track {
+.rc-slider-orange-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #ff9500 0%, #d75f00 100%); }
 
-.orange-background::-moz-range-track {
+.rc-slider-orange-background::-moz-range-track {
   background: linear-gradient(180deg, #ff9500 0%, #d75f00 100%); }
 
-.pink-progress::-moz-range-progress {
+.rc-slider-pink-progress::-moz-range-progress {
   background: linear-gradient(180deg, #ff2968 0%, #99195e 100%); }
 
-.pink-background::-webkit-slider-runnable-track {
+.rc-slider-pink-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #ff2968 0%, #99195e 100%); }
 
-.pink-background::-moz-range-track {
+.rc-slider-pink-background::-moz-range-track {
   background: linear-gradient(180deg, #ff2968 0%, #99195e 100%); }
 
-.purple-progress::-moz-range-progress {
+.rc-slider-purple-progress::-moz-range-progress {
   background: linear-gradient(180deg, #cc73e1 0%, #7c1fa1 100%); }
 
-.purple-background::-webkit-slider-runnable-track {
+.rc-slider-purple-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #cc73e1 0%, #7c1fa1 100%); }
 
-.purple-background::-moz-range-track {
+.rc-slider-purple-background::-moz-range-track {
   background: linear-gradient(180deg, #cc73e1 0%, #7c1fa1 100%); }
 
-.red-progress::-moz-range-progress {
+.rc-slider-red-progress::-moz-range-progress {
   background: linear-gradient(180deg, #ff3b30 0%, #c22518 100%); }
 
-.red-background::-webkit-slider-runnable-track {
+.rc-slider-red-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #ff3b30 0%, #c22518 100%); }
 
-.red-background::-moz-range-track {
+.rc-slider-red-background::-moz-range-track {
   background: linear-gradient(180deg, #ff3b30 0%, #c22518 100%); }
 
-.yellow-progress::-moz-range-progress {
+.rc-slider-yellow-progress::-moz-range-progress {
   background: linear-gradient(180deg, #ffcc00 0%, #d8ac21 100%); }
 
-.yellow-background::-webkit-slider-runnable-track {
+.rc-slider-yellow-background::-webkit-slider-runnable-track {
   background: linear-gradient(180deg, #ffcc00 0%, #d8ac21 100%); }
 
-.yellow-background::-moz-range-track {
+.rc-slider-yellow-background::-moz-range-track {
   background: linear-gradient(180deg, #ffcc00 0%, #d8ac21 100%); }
