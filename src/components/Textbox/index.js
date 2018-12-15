@@ -68,17 +68,17 @@ class Textbox extends React.Component {
     }
 
     return (
-      <div className="tb-div">
+      <div className="rc-tb-div">
         <input
           type={type}
-          className="cupertino-textbox"
+          className="rc-textbox"
           onChange={this.handleChange}
           onBlur={this.handleFocus}
           onFocus={this.handleFocus}
           style={extraStyle}
           required
         />
-        <span className="rs-float-label" style={extraStyleForLabel}>
+        <span className="rc-textbox-label" style={extraStyleForLabel}>
           {label}
         </span>
       </div>
