@@ -84,7 +84,7 @@ class SnackBar extends React.Component {
 
     // wrap message lines in <p>
     generatedMessage = generatedMessage.map(msg => (
-      <p className="SnackBar-message-line" key={msg.id}>
+      <p className="rc-notification-message-line" key={msg.id}>
         {msg}
       </p>
     ));
@@ -117,10 +117,10 @@ class SnackBar extends React.Component {
     /* eslint-disable jsx-a11y/label-has-associated-control */
     /* eslint-disable jsx-a11y/label-has-for */
     return (
-      <div className="SnackBar" style={style}>
-        <div className="SnackBar-message">{generatedMessage}</div>
+      <div className="rc-notification" style={style}>
+        <div className="rc-notification-message">{generatedMessage}</div>
         <label
-          className="SnackBar-button"
+          className="rc-notification-button"
           onClick={this.handleClick}
           style={dissmissLabelStyle}
         >

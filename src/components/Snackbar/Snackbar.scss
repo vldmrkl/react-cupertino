@@ -1,4 +1,4 @@
-.SnackBar {
+.rc-notification {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,7 +14,7 @@
     position: fixed;
 }
 
-.SnackBar-message {
+.rc-notification-message {
     padding: 0px 16px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -22,14 +22,14 @@
     text-align: left;
 }
 
-.SnackBar-button {
+.rc-notification-button {
     padding: 6px 8px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: #FF3B30;
 }
 
-@keyframes dismissSnackBar {
+@keyframes dismissNotification {
     from {display: flex;}
     to {display: none;}
 }
