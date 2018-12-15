@@ -1,14 +1,14 @@
 @import '../../styles/ColorSchema.scss';
-.switch {
+.rc-switch {
   position: relative;
   display: inline-block;
 }
 
-.switch input {
+.rc-switch .rc-switch-cb {
   display: none;
 }
 
-.switch-base {
+.rc-switch-base {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -20,7 +20,7 @@
   border-radius: 34px;
 }
 
-.switch-base:before {
+.rc-switch-base:before {
   position: absolute;
   content: '';
   left: 0px;
@@ -39,49 +39,49 @@
   border-radius: 50%;
 }
 
-.small {
+.small-rc-switch {
   width: 55px;
   height: 26px;
 }
 
-.small-base:before {
+.small-rc-base:before {
   height: 28px;
   width: 28px;
 }
 
-input:checked + .small-base:before {
+.rc-switch-cb:checked + .small-rc-base:before {
   -webkit-transform: translateX(32px);
   -ms-transform: translateX(32px);
   transform: translateX(32px);
 }
 
-.medium {
+.medium-rc-switch {
   width: 80px;
   height: 34px;
 }
 
-.medium-base:before {
+.medium-rc-base:before {
   height: 36px;
   width: 36px;
 }
 
-input:checked + .medium-base:before {
+.rc-switch-cb:checked + .medium-rc-base:before {
   -webkit-transform: translateX(47px);
   -ms-transform: translateX(47px);
   transform: translateX(47px);
 }
 
-.large {
+.large-rc-switch {
   width: 105px;
   height: 42px;
 }
 
-.large-base:before {
+.large-rc-base:before {
   height: 44px;
   width: 44px;
 }
 
-input:checked + .large-base:before {
+.rc-switch-cb:checked + .large-rc-base:before {
   -webkit-transform: translateX(63px);
   -ms-transform: translateX(63px);
   transform: translateX(63px);
