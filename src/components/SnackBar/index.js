@@ -36,10 +36,10 @@ class SnackBar extends Component {
                             arr.concat(msg);
                             line1Complete = true;
                         } else {
-                            arr[0] = arr[0].length ? arr[0] + ' ' + msg : msg;      // construct line 1
+                            arr[0] = arr[0].length ? `${arr[0]  } ${  msg}` : msg;      // construct line 1
                         }    
                     } else {
-                        arr[1] = arr[1].length ? arr[1] + ' ' + msg : msg;      // construct line 2                        
+                        arr[1] = arr[1].length ? `${arr[1]  } ${  msg}` : msg;      // construct line 2                        
                     }
                     return arr;
                 }, []);

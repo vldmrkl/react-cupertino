@@ -19,62 +19,69 @@ class PushButton extends React.Component {
   }
 
   componentDidMount() {
+    const { color, style } = this.props;
     this.setState({
-      background: GRADIENTS[this.props.color]
+      background: GRADIENTS[color]
     });
 
-    if (this.props.style.fontSize) {
+    if (style.fontSize) {
       this.setState({
-        fontSize: this.props.style.fontSize
+        fontSize: style.fontSize
       });
     }
 
-    if (this.props.style.fontFamily) {
+    if (style.fontFamily) {
       this.setState({
-        fontFamily: this.props.style.fontFamily
+        fontFamily: style.fontFamily
       });
     }
   }
 
   setSolidColorBackground() {
+    const { color } = this.props;
+
     this.setState({
-      background: COLORS[this.props.color]
+      background: COLORS[color]
     });
   }
 
   setGradientBackground() {
+    const { color } = this.props;
+
     this.setState({
-      background: GRADIENTS[this.props.color]
+      background: GRADIENTS[color]
     });
   }
 
   setDarkSolidColorBackground() {
-    let darkName =
-      'dark' +
-      this.props.color.charAt(0).toUpperCase() +
-      this.props.color.slice(1);
-    console.log(darkName);
+    const { color } = this.props;
+
+    const darkName = `dark${color.charAt(0).toUpperCase()}${color.slice(1)}`;
     this.setState({
       background: COLORS[darkName]
     });
   }
 
   render() {
+    const { background, fontFamily, fontSize } = this.state;
+    const { click, size, title } = this.props;
+
     return (
       <button
-        className={'push-button ' + this.props.size + '-btn'}
+        className={`push-button ${size}-btn`}
         style={{
-          background: this.state.background,
-          fontFamily: this.state.fontFamily,
-          fontSize: this.state.fontSize
+          background,
+          fontFamily,
+          fontSize
         }}
         onMouseEnter={this.setSolidColorBackground}
         onMouseLeave={this.setGradientBackground}
         onMouseUp={this.setGradientBackground}
         onMouseDown={this.setDarkSolidColorBackground}
-        onClick={this.props.click}
+        onClick={click}
+        type="button"
       >
-        {this.props.title}
+        {title}
       </button>
     );
   }
@@ -84,8 +91,8 @@ PushButton.defaultProps = {
   color: 'blue',
   size: 'medium',
   style: {
-    fontSize: '12px',
-    fontFamily: 'Arial, Helvetica, sans-serif'
+    fontFamily: 'Arial, Helvetica, sans-serif',
+    fontSize: '12px'
   },
   title: 'Title'
 };
@@ -102,7 +109,10 @@ PushButton.propTypes = {
     'yellow'
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  style: PropTypes.object,
+  style: PropTypes.shape({
+    fontFamily: PropTypes.string,
+    fontSize: PropTypes.string
+  }),
   title: PropTypes.string
 };
 
