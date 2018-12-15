@@ -1,5 +1,5 @@
 @import '../../styles/ColorSchema.scss';
-.container {
+.rc-radio-container {
     display: block;
     position: relative;
     text-align: left;
@@ -17,26 +17,26 @@
 
 }
 
-.small-rb-container {
+.small-rc-radio-container {
     padding-top: 0px;
     padding-left: 20px;
     margin-bottom: 0;
     text-align: start;
 }
 
-.medium-rb-container {
+.medium-rc-radio-container {
     padding-top: 3px;
     padding-left: 30px;
 }
 
-.large-rb-container {
+.large-rc-radio-container {
     padding-top: 10px;
     padding-left: 40px;
 }
 
 /* Hide the browser's default radio button */
 
-.container input {
+.rc-radio-container .rc-radio-button {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -44,7 +44,7 @@
 
 /* Create a custom radio button */
 
-.checkmark {
+.rc-checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,29 +54,29 @@
     border-radius: 50%;
 }
 
-.container:hover input~.checkmark {
+.rc-radio-container:hover .rc-radio-button~.rc-checkmark {
     background: $dark-gray;
 }
 
-.container:active input~.checkmark {
+.rc-radio-container:active .rc-radio-button~.rc-checkmark {
     background: #434343;
 }
 
-.container input:checked~.checkmark {
+.rc-radio-container .rc-radio-button:checked~.rc-checkmark {
     background: $blue-grad;
 }
 
-.checkmark:after {
+.rc-checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-.container input:checked~.checkmark:after {
+.rc-radio-container .rc-radio-button:checked~.rc-checkmark:after {
     display: block;
 }
 
-.container .checkmark:after {
+.rc-radio-container .rc-checkmark:after {
     top: 5px;
     left: 5px;
     width: 15px;
@@ -85,65 +85,65 @@
     background: white;
 }
 
-.small-checkmark {
+.small-rc-checkmark {
     top: 3px;
     width: 15px;
     height: 15px;
 }
 
-.container .small-checkmark:after {
+.rc-radio-container .small-rc-checkmark:after {
     top: 3px;
     left: 3px;
     width: 9px;
     height: 9px;
 }
 
-.large-checkmark {
+.large-rc-checkmark {
     width: 35px;
     height: 35px;
 }
 
-.container .large-checkmark:after {
+.rc-radio-container .large-rc-checkmark:after {
     width: 25px;
     height: 25px;
 }
 
-.dark-text {
+.rc-radio-dark-text {
     color: black;
 }
 
-.light-text {
+.rc-radio-light-text {
     color: white;
 }
 
-.blue-back input:checked~.checkmark {
+.rc-radio-blue-back .rc-radio-button:checked~.rc-checkmark {
     background: $blue-grad;
 }
 
-.grey-back input:checked~.checkmark {
+.rc-radio-grey-back .rc-radio-button:checked~.rc-checkmark {
     background: $dark-gray-grad;
 }
 
-.green-back input:checked~.checkmark {
+.rc-radio-green-back .rc-radio-button:checked~.rc-checkmark {
     background: $green-grad;
 }
 
-.orange-back input:checked~.checkmark {
+.rc-radio-orange-back .rc-radio-button:checked~.rc-checkmark {
     background: $orange-grad;
 }
 
-.pink-back input:checked~.checkmark {
+.rc-radio-pink-back .rc-radio-button:checked~.rc-checkmark {
     background: $pink-grad;
 }
 
-.purple-back input:checked~.checkmark {
+.rc-radio-purple-back .rc-radio-button:checked~.rc-checkmark {
     background: $purple-grad;
 }
 
-.red-back input:checked~.checkmark {
+.rc-radio-red-back .rc-radio-button:checked~.rc-checkmark {
     background: $red-grad;
 }
 
-.yellow-back input:checked~.checkmark {
+.rc-radio-yellow-back .rc-radio-button:checked~.rc-checkmark {
     background: $yellow-grad;
 }
