@@ -32,4 +32,9 @@ storiesOf('Slider', module)
     <div style={{ width: '15%' }}>
       <Slider onChange={handleChange} />
     </div>
+  ))
+  .add('with step props', () => (
+    <div style={{ width: '15%' }}>
+      <Slider step={10} />
+    </div>
   ));
