@@ -59,94 +59,102 @@
     background: $blue-grad;
 }
 
-.rc-slider-blue-background::-webkit-slider-runnable-track {
-    background: $blue-grad;
-}
-
-.rc-slider-blue-background::-moz-range-track {
-    background: $blue-grad;
+.rc-slider-blue-background {
+    &::-webkit-slider-runnable-track {
+        background: $blue-grad;
+    }
+    &::-moz-range-track {
+        background: $blue-grad;
+    }
 }
 
 .rc-slider-grey-progress::-moz-range-progress {
     background: $dark-gray-grad;
 }
 
-.rc-slider-grey-background::-webkit-slider-runnable-track {
-    background: $dark-gray-grad;
-}
-
-.rc-slider-grey-background::-moz-range-track {
-    background: $dark-gray-grad;
+.rc-slider-grey-background {
+    &::-webkit-slider-runnable-track {
+        background: $dark-gray-grad;
+    }
+    &::-moz-range-track {
+        background: $dark-gray-grad;
+    }
 }
 
 .rc-slider-green-progress::-moz-range-progress {
     background: $green-grad;
 }
 
-.rc-slider-green-background::-webkit-slider-runnable-track {
-    background: $green-grad;
-}
-
-.rc-slider-green-background::-moz-range-track {
-    background: $green-grad;
+.rc-slider-green-background {
+    &::-webkit-slider-runnable-track {
+        background: $green-grad;
+    }
+    &::-moz-range-track {
+        background: $green-grad;
+    }
 }
 
 .rc-slider-orange-progress::-moz-range-progress {
     background: $orange-grad;
 }
 
-.rc-slider-orange-background::-webkit-slider-runnable-track {
-    background: $orange-grad;
-}
-
-.rc-slider-orange-background::-moz-range-track {
-    background: $orange-grad;
+.rc-slider-orange-background {
+    &::-webkit-slider-runnable-track {
+        background: $orange-grad;
+    }
+    &::-moz-range-track {
+        background: $orange-grad;
+    }
 }
 
 .rc-slider-pink-progress::-moz-range-progress {
     background: $pink-grad;
 }
 
-.rc-slider-pink-background::-webkit-slider-runnable-track {
-    background: $pink-grad;
-}
-
-.rc-slider-pink-background::-moz-range-track {
-    background: $pink-grad;
+.rc-slider-pink-background {
+    &::-webkit-slider-runnable-track {
+        background: $pink-grad;
+    }
+    &::-moz-range-track {
+        background: $pink-grad;
+    }
 }
 
 .rc-slider-purple-progress::-moz-range-progress {
     background: $purple-grad;
 }
 
-.rc-slider-purple-background::-webkit-slider-runnable-track {
-    background: $purple-grad;
-}
-
-.rc-slider-purple-background::-moz-range-track {
-    background: $purple-grad;
+.rc-slider-purple-background {
+    &::-webkit-slider-runnable-track {
+        background: $purple-grad;
+    }
+    &::-moz-range-track {
+        background: $purple-grad;
+    }
 }
 
 .rc-slider-red-progress::-moz-range-progress {
     background: $red-grad;
 }
 
-.rc-slider-red-background::-webkit-slider-runnable-track {
-    background: $red-grad;
-}
-
-.rc-slider-red-background::-moz-range-track {
-    background: $red-grad;
+.rc-slider-red-background {
+    &::-webkit-slider-runnable-track {
+        background: $red-grad;
+    }
+    &::-moz-range-track {
+        background: $red-grad;
+    }
 }
 
 .rc-slider-yellow-progress::-moz-range-progress {
     background: $yellow-grad;
 }
 
-.rc-slider-yellow-background::-webkit-slider-runnable-track {
-    background: $yellow-grad;
-}
-
-.rc-slider-yellow-background::-moz-range-track {
-    background: $yellow-grad;
+.rc-slider-yellow-background {
+    &::-webkit-slider-runnable-track {
+        background: $yellow-grad;
+    }
+    &::-moz-range-track {
+        background: $yellow-grad;
+    }
 }
