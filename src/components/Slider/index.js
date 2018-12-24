@@ -2,47 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Slider.css';
 
-class Slider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 50
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+function Slider(props) {
+  const {
+    backgroundColor,
+    maxValue,
+    minValue,
+    onChange,
+    progressColor,
+    step
+  } = props;
 
-  componentDidMount() {
-    const { startValue } = this.props;
+  const progressColorClass = `${progressColor}-progress`;
+  const backgroundColorClass = `${backgroundColor}-background`;
 
-    this.setState({
-      value: startValue
-    });
-  }
-
-  handleChange(e) {
-    this.setState({
-      value: e.target.value
-    });
-  }
-
-  render() {
-    const { value } = this.state;
-    const { backgroundColor, maxValue, minValue, progressColor } = this.props;
-
-    const progressColorClass = `${progressColor}-progress`;
-    const backgroundColorClass = `${backgroundColor}-background`;
-
-    return (
-      <input
-        type="range"
-        onChange={this.handleChange}
-        className={`rc-slider rc-slider-${progressColorClass} rc-slider-${backgroundColorClass}`}
-        value={value}
-        min={minValue}
-        max={maxValue}
-      />
-    );
-  }
+  return (
+    <input
+      type="range"
+      onChange={onChange}
+      className={`rc-slider rc-slider-${progressColorClass} rc-slider-${backgroundColorClass}`}
+      min={minValue}
+      max={maxValue}
+      step={step}
+    />
+  );
 }
 
 Slider.defaultProps = {
@@ -50,7 +32,8 @@ Slider.defaultProps = {
   progressColor: 'blue',
   minValue: 0,
   maxValue: 100,
-  startValue: 50
+  onChange: null,
+  step: 1
 };
 
 Slider.propTypes = {
@@ -76,7 +59,8 @@ Slider.propTypes = {
   ]),
   minValue: PropTypes.number,
   maxValue: PropTypes.number,
-  startValue: PropTypes.number
+  onChange: PropTypes.func,
+  step: PropTypes.number
 };
 
 export default Slider;
