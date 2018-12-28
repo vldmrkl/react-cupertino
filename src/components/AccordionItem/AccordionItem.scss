@@ -1,0 +1,45 @@
+.rc-ai-item-head {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+.rc-ai-icon {
+  width: 32px;
+}
+
+.rc-ai-title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.rc-ai-desc {
+  padding-left: calc(1em + 32px);
+  padding-right: 30px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  max-height: 0;
+  &.active {
+    max-height: 80px;
+    margin-bottom: 15px;
+    transition: all 0.5s ease-in-out;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      background: transparent;
+    }
+  }
+}
+
+.rc-ai-item {
+  border-bottom: 1px solid #cacaca;
+  a.rc-ai-title {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 0.75em;
+    border-radius: 0.15em;
+    transition: background 0.3s ease;
+  }
+}

@@ -1,0 +1,9 @@
+.rc-accordion {
+  list-style: none;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  &:first-child {
+    border-top: 1px solid #cacaca;
+  }
+  width: 400px;
+}
