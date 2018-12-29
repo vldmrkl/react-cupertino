@@ -1,0 +1,43 @@
+.rc-tag {
+    cursor: pointer;
+}
+
+.rc-tag .rc-def-tag-cb {
+    position: absolute;
+    opacity: 0;
+}
+
+.rc-tag-label {
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    height: 30px;
+    min-width: 100px;
+    font-weight: lighter;
+    width: max-content;
+}
+
+.rc-tag-title {
+    padding: 15px;
+    padding-left: 5px;
+    user-select: none;
+}
+
+.rc-tag:hover .rc-def-tag-cb~.rc-tag-label {
+    background-color: #e5e5e5;
+}
+
+.rc-tag .rc-def-tag-cb:checked~.rc-tag-label {
+    background-color: #262626;
+    color: white;
+}
+
+.rc-tag-icon {
+    padding-left: 5px;
+    height: 20px;
+}
