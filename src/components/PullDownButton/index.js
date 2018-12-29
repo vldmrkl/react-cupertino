@@ -1,23 +1,18 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './PullDownButton.css';
 
-class PullDownButton extends React.Component {
-  render() {
-    const { options, onChange, size } = this.props;
+function PullDownButton(props) {
+  const { options, onChange, size } = props;
 
-    return (
-      <div className={`rc-pull-down-button rc-${size}-pd-btn`}>
-        <select className="rc-def-select" onChange={onChange}>
-          {options &&
-            options.map(item => {
-              return <option value={item.value}>{item.label}</option>;
-            })}
-        </select>
-      </div>
-    );
-  }
+  return (
+    <div className={`rc-pull-down-button rc-${size}-pd-btn`}>
+      <select className="rc-def-select" onChange={onChange}>
+        {options &&
+          options.map(item => <option value={item.value}>{item.label}</option>)}
+      </select>
+    </div>
+  );
 }
 
 PullDownButton.defaultProps = {
@@ -27,7 +22,9 @@ PullDownButton.defaultProps = {
 
 PullDownButton.propTypes = {
   onChange: PropTypes.func,
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({ value: PropTypes.string, label: PropTypes.string })
+  ).isRequired,
   size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
