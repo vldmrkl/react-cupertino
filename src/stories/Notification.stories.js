@@ -15,7 +15,11 @@ storiesOf('Notification', module)
     />
   ))
   .add('with timeout props', () => (
-    <Notification message="Update available!" position="top-left" timeout={10000} />
+    <Notification
+      message="Update available!"
+      position="top-left"
+      timeout={10000}
+    />
   ))
   .add('with dismissLabelColor props', () => (
     <Notification message="Update available!" dismissLabelColor="orange" />
