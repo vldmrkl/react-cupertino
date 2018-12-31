@@ -13,7 +13,7 @@
     "build-css": "node-sass-chokidar src/components/ -o src/components/",
     "dev": "webpack --mode development --env.dist=false",
     "dev:dist": "webpack --mode development",
-    "lint": "eslint lib/**; exit 0",
+    "lint": "eslint src/**; exit 0",
     "lint:watch": "esw -w lib/**",
     "lint-staged": {
       "*.{js,jsx}": [
