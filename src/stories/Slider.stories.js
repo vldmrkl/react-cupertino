@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Slider from '../components/Slider';
 
 function handleChange(e) {
+  /* eslint-disable-next-line */
   console.log(e.target.value);
 }
 
