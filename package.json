@@ -1,6 +1,6 @@
 {
   "name": "react-cupertino",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "React UI Component library inspired by Apple's Design Philosophy",
   "main": "lib/index/index.js",
   "husky": {
@@ -30,14 +30,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/klymenkoo/react-cupertino.git"
+    "url": "git+https://github.com/react-cupertino/react-cupertino"
   },
   "author": "Volodymyr Klymenko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/klymenkoo/react-cupertino/issues"
+    "url": "https://github.com/react-cupertino/react-cupertino/issues"
   },
-  "homepage": "https://github.com/klymenkoo/react-cupertino#readme",
+  "homepage": "https://react-cupertino.github.io/",
   "dependencies": {
     "prop-types": "^15.6.2"
   },
