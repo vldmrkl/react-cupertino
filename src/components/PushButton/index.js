@@ -50,7 +50,7 @@ class PushButton extends React.Component {
 
   render() {
     const { background } = this.state;
-    const { click, size, style, title } = this.props;
+    const { onClick, size, style, title } = this.props;
     const { fontFamily, fontSize } = style;
 
     return (
@@ -65,7 +65,7 @@ class PushButton extends React.Component {
         onMouseLeave={this.setGradientBackground}
         onMouseUp={this.setGradientBackground}
         onMouseDown={this.setDarkSolidColorBackground}
-        onClick={click}
+        onClick={onClick}
         type="button"
       >
         {title}
