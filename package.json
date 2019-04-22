@@ -1,6 +1,6 @@
 {
   "name": "react-cupertino",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "React UI Component library inspired by Apple's Design Philosophy",
   "main": "lib/index/index.js",
   "husky": {
